@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT Calculator</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0077cc;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-container .add-vat {
+            background-color: #0077cc;
+            color: white;
+        }
+
+        .form-container .add-vat:hover {
+            background-color: #005bb5;
+        }
+
+        .form-container .exclude-vat {
+            background-color: #e63946;
+            color: white;
+        }
+
+        .form-container .exclude-vat:hover {
+            background-color: #b02a36;
+        }
+
+        #results {
+            margin-top: 2rem;
+            display: none; /* Initially hidden */
+        }
+
+        .result-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            flex: 1 1 calc(45% - 1rem);
+            min-width: 150px;
+            max-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function calculateVAT(action) {
+            const amount = parseFloat(document.getElementById('sum').value);
+            const vat = parseFloat(document.getElementById('vat').value);
+
+            if (isNaN(amount) || isNaN(vat)) {
+                alert("Please enter valid numeric values for Amount and VAT.");
+                return;
+            }
+
+            let result, vatAmount;
+            if (action === 'add') {
+                vatAmount = amount * (vat / 100);
+                result = amount + vatAmount;
+            } else if (action === 'exclude') {
+                vatAmount = amount - amount / (1 + vat / 100);
+                result = amount - vatAmount;
+            }
+
+            displayResults(amount, vat, action, vatAmount, result);
+        }
+
+        function displayResults(amount, vat, action, vatAmount, finalAmount) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Original Amount</h3>
+                        <p>$${amount.toFixed(2)}</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>VAT Percentage</h3>
+                        <p>${vat}%</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>${action === 'exclude' ? 'VAT Excluded' : 'VAT Added'}</h3>
+                        <p>$${vatAmount.toFixed(2)}</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>${action === 'exclude' ? 'Net Amount' : 'Gross Amount'}</h3>
+                        <p>$${finalAmount.toFixed(2)}</p>
+                    </div>
+                </div>
+            `;
+            resultsDiv.style.display = 'block'; // Show results
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>VAT Calculator</h1>
+    </header>
+    <main class="container">
+        <section class="intro">
+            <p>Calculate VAT easily. Enter the amount, VAT percentage, and choose whether to add or exclude VAT.</p>
+        </section>
+        <section class="form-container">
+            <div>
+                <label for="sum">Amount:</label>
+                <input type="number" id="sum" step="0.01" min="0" placeholder="Enter amount">
+            </div>
+            <div>
+                <label for="vat">VAT Percentage:</label>
+                <input type="number" id="vat" step="0.01" min="0" value="20" placeholder="Enter VAT %">
+            </div>
+            <div>
+                <button class="add-vat" onclick="calculateVAT('add')">Add VAT</button>
+                <button class="exclude-vat" onclick="calculateVAT('exclude')">Exclude VAT</button>
+            </div>
+        </section>
+        <section id="results"></section>
+    </main>
+    <footer>
+        <p>Use this tool at your discretion. <a href="/privacy-policy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
