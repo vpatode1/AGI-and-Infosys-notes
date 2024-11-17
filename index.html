@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAT Calculator</title>
+    <title>Welcome | My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
-        /* General Styles */
+        /* General Reset and Styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,206 +18,250 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f7f8;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+            position: relative;
+            background-color: #1b2838;
         }
 
+        /* Galaxy Background Effect */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Header Styles */
         header {
-            background-color: #0077cc;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #2c3e50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 10;
         }
 
         header h1 {
             font-size: 2.5rem;
+            font-weight: 600;
+            color: #ecf0f1;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1.5rem;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .intro p {
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-container label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .form-container input[type="number"] {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-container button {
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .form-container .add-vat {
-            background-color: #0077cc;
-            color: white;
-        }
-
-        .form-container .add-vat:hover {
-            background-color: #005bb5;
-        }
-
-        .form-container .exclude-vat {
-            background-color: #e63946;
-            color: white;
-        }
-
-        .form-container .exclude-vat:hover {
-            background-color: #b02a36;
-        }
-
-        #results {
-            margin-top: 2rem;
-            display: none; /* Initially hidden */
-        }
-
-        .result-card {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            flex: 1 1 calc(45% - 1rem);
-            min-width: 150px;
-            max-width: 200px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .results-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        footer a {
-            color: #0077cc;
+        header nav a {
             text-decoration: none;
+            color: #ecf0f1;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        header nav a:hover {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        /* Main Section */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 350px;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Text Styles */
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .highlight-hello {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #dfe6e9;
+            opacity: 0; /* Initially hidden for animation */
+        }
+
+        .highlight-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ecf0f1;
+            margin-top: 10px;
+            opacity: 0; /* Initially hidden for animation */
+        }
+
+        .highlight-hobbies {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #aab7b8;
+            margin-top: 15px;
+            opacity: 0; /* Initially hidden for animation */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #34495e;
+            color: #b0c4de;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1rem;
         }
     </style>
-    <script>
-        function calculateVAT(action) {
-            const amount = parseFloat(document.getElementById('sum').value);
-            const vat = parseFloat(document.getElementById('vat').value);
-
-            if (isNaN(amount) || isNaN(vat)) {
-                alert("Please enter valid numeric values for Amount and VAT.");
-                return;
-            }
-
-            let result, vatAmount;
-            if (action === 'add') {
-                vatAmount = amount * (vat / 100);
-                result = amount + vatAmount;
-            } else if (action === 'exclude') {
-                vatAmount = amount - amount / (1 + vat / 100);
-                result = amount - vatAmount;
-            }
-
-            displayResults(amount, vat, action, vatAmount, result);
-        }
-
-        function displayResults(amount, vat, action, vatAmount, finalAmount) {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `
-                <div class="results-grid">
-                    <div class="result-card">
-                        <h3>Original Amount</h3>
-                        <p>$${amount.toFixed(2)}</p>
-                    </div>
-                    <div class="result-card">
-                        <h3>VAT Percentage</h3>
-                        <p>${vat}%</p>
-                    </div>
-                    <div class="result-card">
-                        <h3>${action === 'exclude' ? 'VAT Excluded' : 'VAT Added'}</h3>
-                        <p>$${vatAmount.toFixed(2)}</p>
-                    </div>
-                    <div class="result-card">
-                        <h3>${action === 'exclude' ? 'Net Amount' : 'Gross Amount'}</h3>
-                        <p>$${finalAmount.toFixed(2)}</p>
-                    </div>
-                </div>
-            `;
-            resultsDiv.style.display = 'block'; // Show results
-        }
-    </script>
 </head>
 <body>
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
     <header>
-        <h1>VAT Calculator</h1>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-projects.html">My Projects</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
-    <main class="container">
-        <section class="intro">
-            <p>Calculate VAT easily. Enter the amount, VAT percentage, and choose whether to add or exclude VAT.</p>
-        </section>
-        <section class="form-container">
-            <div>
-                <label for="sum">Amount:</label>
-                <input type="number" id="sum" step="0.01" min="0" placeholder="Enter amount">
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-image">
+                <img src="https://2.bp.blogspot.com/-f6Xj0Xqjoms/XFV01HJ-22I/AAAAAAAAVbU/PzAN-ypm7UY7EuWDwg87amhg8I8PGvoYQCLcBGAs/s1600/Vijay%2BDeverakonda%2Bgo%2Bprofile%2B2.jpg" alt="Vijay's Profile Picture">
             </div>
-            <div>
-                <label for="vat">VAT Percentage:</label>
-                <input type="number" id="vat" step="0.01" min="0" value="20" placeholder="Enter VAT %">
-            </div>
-            <div>
-                <button class="add-vat" onclick="calculateVAT('add')">Add VAT</button>
-                <button class="exclude-vat" onclick="calculateVAT('exclude')">Exclude VAT</button>
+            <div class="hero-content">
+                <p class="highlight-hello">Hello!</p>
+                <p class="highlight-name">
+                    I'm <strong>Vijay Suresh Patode</strong>, a <strong>Junior Accountant at Infosys</strong>.
+                </p>
+                <p class="highlight-hobbies">I love <strong>traveling, video editing</strong>, and <strong>exploring new things</strong>.</p>
             </div>
         </section>
-        <section id="results"></section>
     </main>
+
     <footer>
-        <p>Use this tool at your discretion. <a href="/privacy-policy.html">Privacy Policy</a></p>
+        <p>© 2024 Vijay Suresh Patode. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Initialize Particles.js for the galaxy effect
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "star",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.4,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 4,
+                        "size_min": 0.1
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "random": true
+                }
+            },
+            "retina_detect": true
+        });
+
+        // GSAP Animations
+        window.onload = function() {
+            // Animate text on the right side of the image
+            gsap.fromTo(".highlight-hello", {
+                opacity: 0,
+                y: -20
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power2.out"
+            });
+
+            gsap.fromTo(".highlight-name", {
+                opacity: 0,
+                y: 20
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                delay: 0.5,
+                ease: "power2.out"
+            });
+
+            gsap.fromTo(".highlight-hobbies", {
+                opacity: 0,
+                y: 20
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                delay: 1,
+                ease: "power2.out"
+            });
+        };
+    </script>
 </body>
 </html>
