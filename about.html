@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Vijay Suresh Patode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #1b2838;
+            color: white;
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Header (no changes) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #2c3e50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ecf0f1;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        /* Main Content Section */
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section {
+            width: 100%;
+            margin-bottom: 2rem;
+            background: rgba(44, 62, 80, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .section h2 {
+            color: #00d4ff;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 2px solid #00d4ff;
+            padding-bottom: 5px;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #bdc3c7;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1rem;
+            color: #aab7b8;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .details-list li {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .details-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-size: 1.5rem;
+            top: 0;
+        }
+
+        /* Footer (no changes) */
+        footer {
+            background-color: #34495e;
+            color: #b0c4de;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-top: 3rem;
+            width: 100%;
+            border-top: 2px solid #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Header (from welcome page) -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-projects.html">My Projects</a>
+            <a href="about.html">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Profile Section -->
+        <section class="section">
+            <h2>About Me</h2>
+            <p>
+                I'm <strong>Vijay Suresh Patode</strong>, a Junior Accountant at Infosys. With over a year of hands-on experience in P2P operations,
+                I am also proficient in <strong>SAP HANA</strong>, <strong>SQL</strong>, and <strong>Excel</strong>. I’m passionate about
+                <strong>optimizing processes</strong> and delivering high-quality results through my finance and tech skills.
+            </p>
+        </section>
+
+        <!-- Profile Summary Section -->
+        <section class="section">
+            <h2>Profile Summary</h2>
+            <ul class="details-list">
+                <li>Junior Accountant with 1+ year of experience in P2P operations.</li>
+                <li>Skilled in <strong>MS Office</strong>, <strong>Photoshop</strong>, <strong>HTML/CSS</strong>, and <strong>Node.js</strong>.</li>
+                <li>Proficient in <strong>SAP HANA</strong>, <strong>SQL</strong>, and <strong>Excel</strong>.</li>
+                <li>Passionate about improving financial operations and driving efficiency.</li>
+            </ul>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="section">
+            <h2>Work Experience</h2>
+            <ul class="details-list">
+                <li><strong>Junior Accountant</strong> - Infosys BPM (Aug 2023 - Present)</li>
+                <li>Handling end-to-end P2P operations and ensuring accuracy in financial reports and transactions.</li>
+                <li>Proficient in <strong>SAP ERP</strong>, <strong>Excel</strong>, and <strong>SQL</strong>.</li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2>Education</h2>
+            <ul class="details-list">
+                <li><strong>B.Com</strong> - H.N. Sinha College, Patur (2020)</li>
+                <li><strong>12th Grade</strong> - Maharashtra Board, English (2017)</li>
+                <li><strong>10th Grade</strong> - Maharashtra Board, Marathi (2015)</li>
+            </ul>
+        </section>
+
+        <!-- Key Skills Section -->
+        <section class="section">
+            <h2>Key Skills</h2>
+            <ul class="details-list">
+                <li>Photoshop</li>
+                <li>Excel</li>
+                <li>SAP HANA</li>
+                <li>SQL</li>
+                <li>HTML/CSS</li>
+                <li>Node.js</li>
+                <li>PowerPoint</li>
+                <li>Asset Works</li>
+                <li>Outlook Configuration</li>
+                <li>IMAP</li>
+            </ul>
+        </section>
+
+        <!-- Personal Info Section -->
+        <section class="section">
+            <h2>Personal Information</h2>
+            <ul class="details-list">
+                <li><strong>City:</strong> Pune</li>
+                <li><strong>Country:</strong> India</li>
+                <li><strong>Languages:</strong> Marathi, Hindi, English</li>
+                <li><strong>Hobbies:</strong> Reading Books, Teaching, Traveling</li>
+                <li><strong>Contact:</strong> (+91) 9168281646</li>
+                <li><strong>Email:</strong> vpatode@gmail.com</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer (from welcome page) -->
+    <footer>
+        <p>© 2024 Vijay Suresh Patode. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Particles.js for the galaxy effect
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "star",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.4,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 4,
+                        "size_min": 0.1
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "random": true
+                }
+            },
+            "retina_detect": true
+        });
+
+        // GSAP Animations for smooth entrance
+        window.onload = function() {
+            gsap.from("header", { opacity: 0, y: -30, duration: 1 });
+            gsap.from(".section", { opacity: 0, y: 30, duration: 1, stagger: 0.2 });
+            gsap.from("footer", { opacity: 0, y: 20, duration: 1, delay: 1 });
+        };
+    </script>
+</body>
+</html>
