@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-adsense-account" content="ca-pub-7081215808805984">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7081215808805984"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7081215808805984" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-    <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            
         }
 
         body {
@@ -116,6 +117,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            position: relative;
         }
 
         .project {
@@ -127,6 +129,7 @@
             text-align: center;
             font-size: 1.2rem;
             transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
         }
 
         .project:hover {
@@ -134,7 +137,62 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Footer Styles */
+        /* VAT Calculator Section */
+        .vat-calculator {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: -100%;
+            transform: translateY(-50%);
+            width: 400px;
+            transition: left 0.5s ease, transform 0.5s ease;
+            z-index: 1000;
+        }
+
+        .vat-calculator h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .vat-calculator input {
+            padding: 1rem;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .vat-calculator button {
+            padding: 1rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .vat-calculator button:hover {
+            background-color: #005bb5;
+        }
+
+        .vat-calculator .results {
+            margin-top: 20px;
+            color: #ecf0f1;
+        }
+
         footer {
             background-color: #34495e;
             color: #b0c4de;
@@ -158,30 +216,39 @@
     </header>
 
     <main>
-        <!-- Hero Section (Text) -->
         <section class="hero-section">
             <div class="hero-content">
-                <p class="highlight-hello">Welcome to my projects page!</p>
-                <p class="highlight-name">
-                    Here you will find a collection of my work as a Junior Accountant and some personal projects I have worked on.
-                </p>
-                <p class="highlight-hobbies">
-                    I'm always looking for new challenges and ways to improve my skills.
-                </p>
+                <p>Welcome to my projects page!</p>
+                <p>Here you will find a collection of my work as a Junior Accountant and personal projects I've worked on.</p>
+                <p>I'm always looking for new challenges and ways to improve my skills.</p>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section class="projects-section">
             <h2>Projects</h2>
             <div class="projects">
-                <div class="project">VAT Converter</div>
-                <div class="project">String Counter</div>
+                <div class="project"><a href="vat-converter.html">Vat Converter</a></div>
+                <div class="project"><a href="string-counter.html">String Counter</a></div>
                 <div class="project">Translator</div>
                 <div class="project">Exam Notes</div>
                 <div class="project">Company Codes</div>
                 <div class="project">Privacy Policy</div>
             </div>
+        </section>
+
+        <!-- VAT Calculator Section -->
+        <section class="vat-calculator" id="vat-calculator">
+            <h3>VAT Calculator</h3>
+            <label for="sum">Amount:</label>
+            <input type="number" id="sum" step="0.01" min="0" placeholder="Enter amount">
+
+            <label for="vat">VAT Percentage:</label>
+            <input type="number" id="vat" step="0.01" min="0" value="20" placeholder="Enter VAT %">
+
+            <button onclick="calculateVAT('add')">Add VAT</button>
+            <button onclick="calculateVAT('exclude')">Exclude VAT</button>
+
+            <div class="results" id="results"></div>
         </section>
     </main>
 
@@ -190,7 +257,7 @@
     </footer>
 
     <script>
-        // Initialize Particles.js for the galaxy effect
+        // Initialize Particles.js
         particlesJS('particles-js', {
             "particles": {
                 "number": {
@@ -204,19 +271,10 @@
                     "value": "#ffffff"
                 },
                 "shape": {
-                    "type": "star",
+                    "type": "circle",
                     "stroke": {
                         "width": 0,
                         "color": "#000000"
-                    }
-                },
-                "opacity": {
-                    "value": 0.4,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.1
                     }
                 },
                 "size": {
@@ -224,16 +282,9 @@
                     "random": true,
                     "anim": {
                         "enable": true,
-                        "speed": 4,
+                        "speed": 40,
                         "size_min": 0.1
                     }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.2,
-                    "width": 1
                 },
                 "move": {
                     "enable": true,
@@ -244,13 +295,47 @@
             "retina_detect": true
         });
 
-        // GSAP Animations
-        window.onload = function() {
-            gsap.from("header", { opacity: 0, y: -30, duration: 1 });
-            gsap.from(".hero-section", { opacity: 0, y: 30, duration: 1, delay: 0.5 });
-            gsap.from(".projects .project", { opacity: 0, scale: 0.8, stagger: 0.2, duration: 1 });
-            gsap.from("footer", { opacity: 0, y: 20, duration: 1, delay: 1 });
-        };
-    </script>
-</body>
-</html>
+        // Toggle VAT Calculator Visibility
+        function toggleVATCalculator() {
+            const vatCalculator = document.getElementById('vat-calculator');
+            const isVisible = vatCalculator.style.left === '0px';
+
+            if (isVisible) {
+                vatCalculator.style.left = '-100%';
+            } else {
+                vatCalculator.style.left = '0';
+            }
+        }
+
+        // VAT Calculation Function
+        function calculateVAT(action) {
+            const amount = parseFloat(document.getElementById('sum').value);
+            const vat = parseFloat(document.getElementById('vat').value);
+
+            if (isNaN(amount) || isNaN(vat)) {
+                alert("Please enter valid numeric values for Amount and VAT.");
+                return;
+            }
+
+            let result, vatAmount;
+            if (action === 'add') {
+                vatAmount = amount * (vat / 100);
+                result = amount + vatAmount;
+            } else if (action === 'exclude') {
+                vatAmount = amount - amount / (1 + vat / 100);
+                result = amount - vatAmount;
+            }
+
+            displayResults(amount, vat, action, vatAmount, result);
+        }
+
+        function displayResults(amount, vat, action, vatAmount, finalAmount) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <div>
+                    <h4>Original Amount</h4>
+                    <p>$${amount.toFixed(2)}</p>
+                </div>
+                <div>
+                    <h4>VAT Percentage</h4>
+                    <p
