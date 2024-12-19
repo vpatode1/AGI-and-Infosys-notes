@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1b2838;
+            color: white;
+        }
+
+        header {
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #2c3e50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ecf0f1;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 8px;
+            width: 500px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 100px; /* To ensure it's below the fixed header */
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        input {
+            padding: 1rem;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        button {
+            padding: 1.2rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        .results {
+            margin-top: 20px;
+            color: #ecf0f1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="my-projects.html">My Projects</a>
+            <a href="about.html">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>VAT Converter</h2>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" step="0.01" min="0">
+        
+        <label for="vatPercentage">VAT Percentage:</label>
+        <input type="number" id="vatPercentage" placeholder="Enter VAT %" step="0.01" min="0" value="20">
+        
+        <button onclick="calculateVAT('add')">Add VAT</button>
+        <button onclick="calculateVAT('exclude')">Exclude VAT</button>
+        
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        function calculateVAT(action) {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const vatPercentage = parseFloat(document.getElementById('vatPercentage').value);
+            
+            if (isNaN(amount) || isNaN(vatPercentage)) {
+                alert("Please enter valid values.");
+                return;
+            }
+
+            let vatAmount, finalAmount;
+
+            if (action === 'add') {
+                vatAmount = amount * (vatPercentage / 100);
+                finalAmount = amount + vatAmount;
+            } else if (action === 'exclude') {
+                vatAmount = amount - amount / (1 + vatPercentage / 100);
+                finalAmount = amount - vatAmount;
+            }
+
+            displayResults(amount, vatPercentage, action, vatAmount, finalAmount);
+        }
+
+        function displayResults(amount, vatPercentage, action, vatAmount, finalAmount) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <div>
+                    <h4>Original Amount</h4>
+                    <p>${amount.toFixed(2)}</p>
+                </div>
+                <div>
+                    <h4>VAT Percentage</h4>
+                    <p>${vatPercentage}%</p>
+                </div>
+                <div>
+                    <h4>${action === 'exclude' ? 'VAT Excluded' : 'VAT Added'}</h4>
+                    <p>${vatAmount.toFixed(2)}</p>
+                </div>
+                <div>
+                    <h4>${action === 'exclude' ? 'Net Amount' : 'Gross Amount'}</h4>
+                    <p>${finalAmount.toFixed(2)}</p>
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>
