@@ -41,6 +41,7 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             width: 200px;
+            margin-right: 10px;
         }
 
         table {
@@ -82,85 +83,4 @@
             <select id="vat-code-filter">
                 <option value="all">All VAT Codes</option>
                 <option value="B3">B3 - IT IVA ACQ. Excluse Art. 15.0</option>
-                <option value="C3">C3 - Non Soggette</option>
-                <option value="A7">A7 - Vendite</option>
-                <option value="VX">VX - 0%</option>
-                <option value="C1">C1 - 0%</option>
-                <option value="10">10% VAT</option>
-                <option value="22">22% VAT</option>
-            </select>
-        </div>
-
-        <table id="vat-report-table">
-            <thead>
-                <tr>
-                    <th>VAT Code</th>
-                    <th>Description</th>
-                    <th>Reference</th>
-                    <th>Amount</th>
-                    <th>VAT Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="report-entry" data-vat-code="B3">
-                    <td>B3</td>
-                    <td>IT IVA ACQ. Excluse Art. 15.0</td>
-                    <td>Art. 15, DPR 633/72</td>
-                    <td>0.00</td>
-                    <td>0%</td>
-                </tr>
-                <tr class="report-entry" data-vat-code="VX">
-                    <td>VX</td>
-                    <td>116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO</td>
-                    <td>IT IVA ACQ. Excluse Art. 15.0</td>
-                    <td>100.00</td>
-                    <td>0%</td>
-                </tr>
-                <tr class="report-entry" data-vat-code="C3">
-                    <td>C3</td>
-                    <td>102783 Giorgia Antonia Mele</td>
-                    <td>Art. 1/54-89 L. 190/2014</td>
-                    <td>150.00</td>
-                    <td>0%</td>
-                </tr>
-                <tr class="report-entry" data-vat-code="A7">
-                    <td>A7</td>
-                    <td>Vendite IVA Esenti</td>
-                    <td>Art. 10, n.18, DPR 633/72</td>
-                    <td>200.00</td>
-                    <td>10%</td>
-                </tr>
-                <tr class="report-entry" data-vat-code="10">
-                    <td>10</td>
-                    <td>VAT Code Example</td>
-                    <td>Exemption Art. 10</td>
-                    <td>250.00</td>
-                    <td>10%</td>
-                </tr>
-                <tr class="report-entry" data-vat-code="22">
-                    <td>22</td>
-                    <td>22% VAT Rate</td>
-                    <td>VAT Code for 22%</td>
-                    <td>500.00</td>
-                    <td>22%</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <script>
-        document.getElementById("vat-code-filter").addEventListener("change", function() {
-            const selectedCode = this.value;
-            const rows = document.querySelectorAll(".report-entry");
-
-            rows.forEach(function(row) {
-                if (selectedCode === "all" || row.getAttribute("data-vat-code") === selectedCode) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                
