@@ -83,4 +83,110 @@
             <select id="vat-code-filter">
                 <option value="all">All VAT Codes</option>
                 <option value="B3">B3 - IT IVA ACQ. Excluse Art. 15.0</option>
-                
+                <option value="C3">C3 - Non Soggette</option>
+                <option value="A7">A7 - Vendite</option>
+                <option value="VX">VX - 0%</option>
+                <option value="C1">C1 - 0%</option>
+                <option value="10">10% VAT</option>
+                <option value="22">22% VAT</option>
+            </select>
+            <select id="exception-filter">
+                <option value="all">All Exceptions</option>
+                <option value="Art. 15, DPR 633/72">Art. 15, DPR 633/72</option>
+                <option value="Art. 1/54-89 L. 190/2014">Art. 1/54-89 L. 190/2014</option>
+                <option value="Exemption Art. 10">Exemption Art. 10</option>
+                <option value="VAT Code for 22%">VAT Code for 22%</option>
+            </select>
+            <select id="company-code-filter">
+                <option value="all">All Company Codes</option>
+                <option value="116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO">116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO</option>
+                <option value="102783 Giorgia Antonia Mele">102783 Giorgia Antonia Mele</option>
+            </select>
+        </div>
+
+        <table id="vat-report-table">
+            <thead>
+                <tr>
+                    <th>VAT Code</th>
+                    <th>Description</th>
+                    <th>Reference</th>
+                    <th>Amount</th>
+                    <th>VAT Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="report-entry" data-vat-code="B3" data-exception="Art. 15, DPR 633/72" data-company-code="116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO">
+                    <td>B3</td>
+                    <td>IT IVA ACQ. Excluse Art. 15.0</td>
+                    <td>Art. 15, DPR 633/72</td>
+                    <td>0.00</td>
+                    <td>0%</td>
+                </tr>
+                <tr class="report-entry" data-vat-code="VX" data-exception="Art. 15, DPR 633/72" data-company-code="116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO">
+                    <td>VX</td>
+                    <td>116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO</td>
+                    <td>Art. 15, DPR 633/72</td>
+                    <td>100.00</td>
+                    <td>0%</td>
+                </tr>
+                <tr class="report-entry" data-vat-code="C3" data-exception="Art. 1/54-89 L. 190/2014" data-company-code="102783 Giorgia Antonia Mele">
+                    <td>C3</td>
+                    <td>102783 Giorgia Antonia Mele</td>
+                    <td>Art. 1/54-89 L. 190/2014</td>
+                    <td>150.00</td>
+                    <td>0%</td>
+                </tr>
+                <tr class="report-entry" data-vat-code="A7" data-exception="Exemption Art. 10" data-company-code="102783 Giorgia Antonia Mele">
+                    <td>A7</td>
+                    <td>Vendite IVA Esenti</td>
+                    <td>Art. 10, n.18, DPR 633/72</td>
+                    <td>200.00</td>
+                    <td>10%</td>
+                </tr>
+                <tr class="report-entry" data-vat-code="10" data-exception="Exemption Art. 10" data-company-code="116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO">
+                    <td>10</td>
+                    <td>VAT Code Example</td>
+                    <td>Exemption Art. 10</td>
+                    <td>250.00</td>
+                    <td>10%</td>
+                </tr>
+                <tr class="report-entry" data-vat-code="22" data-exception="VAT Code for 22%" data-company-code="116447-ROB STUDIO DI LEGROTTAGLIE ROBERTO">
+                    <td>22</td>
+                    <td>22% VAT Rate</td>
+                    <td>VAT Code for 22%</td>
+                    <td>500.00</td>
+                    <td>22%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("vat-code-filter").addEventListener("change", filterTable);
+        document.getElementById("exception-filter").addEventListener("change", filterTable);
+        document.getElementById("company-code-filter").addEventListener("change", filterTable);
+
+        function filterTable() {
+            const vatCode = document.getElementById("vat-code-filter").value;
+            const exception = document.getElementById("exception-filter").value;
+            const companyCode = document.getElementById("company-code-filter").value;
+
+            const rows = document.querySelectorAll(".report-entry");
+
+            rows.forEach(function(row) {
+                const rowVatCode = row.getAttribute("data-vat-code");
+                const rowException = row.getAttribute("data-exception");
+                const rowCompanyCode = row.getAttribute("data-company-code");
+
+                if ((vatCode === "all" || rowVatCode === vatCode) &&
+                    (exception === "all" || rowException === exception) &&
+                    (companyCode === "all" || rowCompanyCode === companyCode)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
