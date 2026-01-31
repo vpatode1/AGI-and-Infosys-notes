@@ -1,270 +1,2671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-adsense-account" content="ca-pub-7081215808805984">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7081215808805984"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome | My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- GSAP Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-    <!-- Particles.js Library -->
+    <title>Bidu Portfolio | Accounting Tools & Expertise</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    
     <style>
-        /* General Reset and Styles */
+        /* Base Styles & Variables */
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #0f4c75;
+            --accent: #ff7e5f;
+            --light: #f0f5ff;
+            --dark: #16213e;
+            --gray: #4a5568;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #3498db;
+            --vat-color: #e74c3c;
+            --gst-color: #27ae60;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --border-radius: 12px;
+            --gradient-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --gradient-secondary: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+            --gradient-accent: linear-gradient(135deg, #ff7e5f 0%, #ff9966 100%);
+            --gradient-vat: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --gradient-gst: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Poppins', sans-serif;
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
             min-height: 100vh;
-            color: #fff;
-            position: relative;
-            background-color: #1b2838;
         }
-
-        /* Galaxy Background Effect */
+        
         #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(15px);
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            background: var(--gradient-accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(255, 126, 95, 0.3);
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .nav-link:hover::before, .nav-link.active::before {
+            left: 0;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.3);
+            border-color: transparent;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Language Translator */
+        .translator-container {
+            margin-left: 2rem;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .translator-btn {
+            background: var(--gradient-secondary);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(15, 76, 117, 0.3);
+        }
+        
+        .translator-btn:hover {
+            background: linear-gradient(135deg, #3282b8 0%, #0f4c75 100%);
+            border-color: var(--accent);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(15, 76, 117, 0.4);
+        }
+        
+        .translator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .translator-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .translator-modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--accent);
+        }
+        
+        .translator-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .translator-modal-title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .close-translator {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .close-translator:hover {
+            transform: rotate(90deg);
+        }
+        
+        .translator-iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 3px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 126, 95, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(255, 126, 95, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 4px 20px rgba(255, 126, 95, 0.3); }
+            to { text-shadow: 0 4px 30px rgba(255, 126, 95, 0.6); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+        
+        .hero-highlight {
+            color: var(--accent);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(255, 126, 95, 0.3);
+        }
+        
+        /* Dashboard Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Tool Cards */
+        .tool-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 5px solid var(--accent);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 126, 95, 0.1) 100%);
             z-index: -1;
         }
-
-        /* Header Styles */
-        header {
+        
+        .tool-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
+        }
+        
+        .tool-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background-color: #2c3e50;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 10;
+            margin-bottom: 1.8rem;
+            color: var(--accent);
         }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #ecf0f1;
-        }
-
-        header nav a {
-            text-decoration: none;
-            color: #ecf0f1;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        header nav a:hover {
-            background-color: #34495e;
-            color: #ecf0f1;
-        }
-
-        /* Main Section */
-        main {
-            flex: 1;
+        
+        .tool-icon {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.2) 0%, rgba(255, 153, 102, 0.2) 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-right: 1.5rem;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.2);
+            border: 2px solid rgba(255, 126, 95, 0.3);
         }
-
-        .hero-section {
+        
+        .tool-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(255, 126, 95, 0.2);
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: #cbd5e0;
+            font-weight: 500;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
+            gap: 8px;
         }
-
-        .hero-image {
-            flex-shrink: 0;
-            width: 350px;
-            height: 450px;
-            overflow: hidden;
+        
+        .input-field {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid rgba(255, 126, 95, 0.2);
             border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(26, 26, 46, 0.6);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-
-        .hero-image img {
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(255, 126, 95, 0.2);
+            background: rgba(26, 26, 46, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 126, 95, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
         }
-
-        /* Text Styles */
-        .hero-content {
-            max-width: 600px;
+        
+        .btn:hover::before {
+            left: 100%;
         }
-
-        .highlight-hello {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #dfe6e9;
-            opacity: 0; /* Initially hidden for animation */
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(255, 126, 95, 0.4);
         }
-
-        .highlight-name {
-            font-size: 1.8rem;
+        
+        .btn:active {
+            transform: translateY(-2px) scale(1);
+        }
+        
+        .result-box {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(255, 153, 102, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.8rem;
+            border-left: 4px solid var(--accent);
+            display: none;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 126, 95, 0.2);
+            animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .result-box.show {
+            display: block;
+        }
+        
+        .result-title {
+            color: var(--accent);
             font-weight: 600;
-            color: #ecf0f1;
-            margin-top: 10px;
-            opacity: 0; /* Initially hidden for animation */
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        .highlight-hobbies {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #aab7b8;
-            margin-top: 15px;
-            opacity: 0; /* Initially hidden for animation */
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 10px rgba(255, 126, 95, 0.3);
         }
-
-        /* Footer Styles */
-        footer {
-            background-color: #34495e;
-            color: #b0c4de;
+        
+        .result-subtext {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        /* Compact Text Analyzer */
+        .text-analyzer-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .text-analyzer-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid rgba(255, 126, 95, 0.2);
+            border-radius: 8px;
+            background: rgba(26, 26, 46, 0.6);
+            color: white;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+            resize: vertical;
+            min-height: 80px;
+            max-height: 120px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-analyzer-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.2);
+            background: rgba(26, 26, 46, 0.8);
+        }
+        
+        .text-stats-compact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .text-stat-compact {
+            background: linear-gradient(135deg, rgba(15, 76, 117, 0.2) 0%, rgba(50, 130, 184, 0.2) 100%);
+            padding: 0.8rem;
+            border-radius: 8px;
             text-align: center;
+            transition: all 0.3s;
+            border: 2px solid rgba(15, 76, 117, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .text-stat-compact:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(15, 76, 117, 0.3);
+        }
+        
+        .text-stat-value-compact {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 5px rgba(255, 126, 95, 0.3);
+        }
+        
+        .text-stat-label-compact {
+            font-size: 0.75rem;
+            color: #cbd5e0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+        
+        .text-analyzer-tip {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(255, 153, 102, 0.1) 100%);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            border-left: 4px solid var(--accent);
+            font-size: 0.85rem;
+            color: #ffccbc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Currency Converter Card */
+        .currency-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            border: 3px solid var(--accent);
+        }
+        
+        .currency-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--accent);
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .currency-input, .currency-select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 126, 95, 0.2);
+            outline: none;
+            background: rgba(26, 26, 46, 0.6);
+            color: white;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s;
+        }
+        
+        .currency-input:focus, .currency-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.2);
+        }
+        
+        .currency-row {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .currency-result {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(255, 153, 102, 0.1) 100%);
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 126, 95, 0.3);
+        }
+        
+        .currency-footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 11px;
+            opacity: 0.7;
+            color: #cbd5e0;
+        }
+        
+        /* EMI Table */
+        .emi-table-container {
+            overflow-x: auto;
+            margin-top: 2rem;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 126, 95, 0.2);
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        
+        .emi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .emi-table th {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.2) 0%, rgba(255, 153, 102, 0.2) 100%);
+            color: var(--accent);
             padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .emi-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 126, 95, 0.1);
+        }
+        
+        .emi-table tr:hover {
+            background: rgba(255, 126, 95, 0.05);
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 3rem;
+            box-shadow: var(--shadow);
+            border: 3px solid var(--accent);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(255, 126, 95, 0.3);
+        }
+        
+        /* Tab Buttons */
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        
+        .tab-btn {
+            background: linear-gradient(135deg, rgba(15, 76, 117, 0.2) 0%, rgba(50, 130, 184, 0.2) 100%);
+            color: #cbd5e0;
+            border: 2px solid rgba(15, 76, 117, 0.3);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            backdrop-filter: blur(5px);
+        }
+        
+        .tab-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.2) 0%, rgba(255, 153, 102, 0.2) 100%);
+            border-color: var(--accent);
+            transform: translateY(-3px) scale(1.05);
+            color: white;
+        }
+        
+        .tab-btn.active {
+            background: var(--gradient-accent);
+            border-color: var(--accent);
+            color: white;
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* GST/VAT Toggle Buttons */
+        .gst-vat-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .tax-toggle-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e0;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
             font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 150px;
+            justify-content: center;
+        }
+        
+        .tax-toggle-btn.vat-btn:hover {
+            background: var(--gradient-vat);
+            color: white;
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
+        
+        .tax-toggle-btn.gst-btn:hover {
+            background: var(--gradient-gst);
+            color: white;
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
+        
+        .tax-toggle-btn.active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tax-toggle-btn.vat-btn.active {
+            background: var(--gradient-vat);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tax-toggle-btn.gst-btn.active {
+            background: var(--gradient-gst);
+            color: white;
+            border-color: transparent;
+        }
+        
+        /* Sector Cards Container */
+        .sectors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* Sector Card */
+        .sector-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--accent);
+            backdrop-filter: blur(10px);
+            height: 100%;
+        }
+        
+        .sector-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sector-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 126, 95, 0.3);
+        }
+        
+        .sector-number {
+            background: var(--gradient-accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+        }
+        
+        .sector-title {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        /* VAT/GST Content */
+        .tax-era-section {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .vat-era {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
+            border-left: 4px solid var(--vat-color);
+            display: block;
+        }
+        
+        .gst-era {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+            border-left: 4px solid var(--gst-color);
+            display: none;
+        }
+        
+        .tax-era-section.active {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+        
+        .tax-era-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .vat-era-title {
+            color: var(--vat-color);
+        }
+        
+        .gst-era-title {
+            color: var(--gst-color);
+        }
+        
+        .tax-points {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tax-point {
+            color: #e2e8f0;
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .tax-point:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .accounting-entry {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .key-difference {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 126, 95, 0.1);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .key-difference strong {
+            color: var(--accent);
+        }
+        
+        .separator {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            margin: 2rem 0;
+            border: none;
+        }
+        
+        /* Summary Section */
+        .summary-container {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+        }
+        
+        .summary-title {
+            color: #3498db;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .summary-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 8px;
+        }
+        
+        .summary-sector {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .summary-vat, .summary-gst {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .summary-vat {
+            color: var(--vat-color);
+        }
+        
+        .summary-gst {
+            color: var(--gst-color);
+        }
+        
+        /* Importance Section */
+        .importance-container {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(142, 68, 173, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            border: 2px solid rgba(155, 89, 182, 0.3);
+        }
+        
+        .importance-title {
+            color: #9b59b6;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .importance-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+        }
+        
+        .importance-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .importance-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .importance-item i {
+            color: #9b59b6;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .importance-text {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
+            padding: 3rem 5%;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+            backdrop-filter: blur(15px);
+        }
+        
+        .footer-text {
+            color: #cbd5e0;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, rgba(15, 76, 117, 0.3) 0%, rgba(50, 130, 184, 0.3) 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border: 2px solid rgba(255, 126, 95, 0.3);
+        }
+        
+        .social-icon:hover {
+            background: var(--gradient-accent);
+            color: white;
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(255, 126, 95, 0.4);
+            border-color: transparent;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .dashboard {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+            
+            .sectors-container {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .summary-grid, .importance-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem 3%;
+                flex-wrap: wrap;
+            }
+            
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(22, 33, 62, 0.98) 100%);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow);
+                z-index: 1000;
+                backdrop-filter: blur(15px);
+                border-top: 3px solid var(--accent);
+            }
+            
+            .nav.active {
+                display: flex;
+                animation: slideIn 0.3s ease;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .translator-container {
+                margin: 1rem 0 0 0;
+                width: 100%;
+            }
+            
+            .translator-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .dashboard {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .tool-card {
+                padding: 1.5rem;
+            }
+            
+            .info-section {
+                padding: 1.5rem;
+            }
+            
+            .tab-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .gst-vat-toggle {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tax-toggle-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .sectors-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-grid, .importance-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .tool-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .sector-card {
+                padding: 1.5rem;
+            }
+            
+            .sector-title {
+                font-size: 1.1rem;
+            }
+            
+            .accounting-entry {
+                font-size: 0.8rem;
+                overflow-x: auto;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-accent);
+            border-radius: 6px;
+            border: 2px solid #1a1a2e;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #ff9966 0%, #ff7e5f 100%);
         }
     </style>
 </head>
 <body>
-    <!-- Particles.js Background -->
+    <!-- Particles Background -->
     <div id="particles-js"></div>
-
-    <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="my-projects.html">My Projects</a>
-            <a href="about.html">About</a>
-            <a href="#">Contact</a>
+    
+    <!-- Google Translate Modal -->
+    <div class="translator-modal" id="translatorModal">
+        <div class="translator-modal-content">
+            <div class="translator-modal-header">
+                <h3 class="translator-modal-title">Translate Page</h3>
+                <button class="close-translator" onclick="closeTranslator()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <iframe 
+                src="https://translate.google.com/?sl=auto&tl=en&op=translate" 
+                class="translator-iframe"
+                title="Google Translator"
+                allow="clipboard-read; clipboard-write"
+            ></iframe>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">B</div>
+            <div class="logo-text">Bidu Portfolio</div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav" id="nav">
+            <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="nav-link"><i class="fas fa-calculator"></i> Tools</a>
+            <a href="#" class="nav-link"><i class="fas fa-file-invoice"></i> Services</a>
+            <a href="#" class="nav-link"><i class="fas fa-user"></i> About</a>
+            <a href="#" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            
+            <div class="translator-container">
+                <button class="translator-btn" onclick="openTranslator()">
+                    <i class="fas fa-language"></i> Translate
+                </button>
+            </div>
         </nav>
     </header>
-
-    <main>
-        <section class="hero-section">
-            <div class="hero-image">
-                <img src="https://2.bp.blogspot.com/-f6Xj0Xqjoms/XFV01HJ-22I/AAAAAAAAVbU/PzAN-ypm7UY7EuWDwg87amhg8I8PGvoYQCLcBGAs/s1600/Vijay%2BDeverakonda%2Bgo%2Bprofile%2B2.jpg" alt="Vijay's Profile Picture">
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Bidu - Accounting Ka Baahubali 🔥</h1>
+            <p class="hero-subtitle">
+                <span class="hero-highlight">Invoice aaye toh seedha pakad leta hoon,</span> GST dikhe toh calculator bole "aaj kaam hoga". SAP me entry kare toh error bolta — "bhai aaj chhutti le raha hoon".
+            </p>
+            <p class="hero-subtitle">
+                Short me bole toh: <span class="hero-highlight">Kaam ekdum tight,</span> Aur style… Ye Baburao ka style hai re baba!
+            </p>
+        </section>
+        
+        <!-- Dashboard with Tools -->
+        <section class="dashboard">
+            <!-- VAT Calculator Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h2 class="tool-title">VAT Calculator</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-rupee-sign"></i> Amount (₹)
+                    </label>
+                    <input type="number" id="vatAmount" class="input-field" placeholder="Enter amount" min="0" step="0.01">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-chart-line"></i> VAT Rate (%)
+                    </label>
+                    <input type="number" id="vatRate" class="input-field" value="18" min="0" max="100" step="0.1">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-calculator"></i> Calculation Type
+                    </label>
+                    <select id="vatType" class="input-field">
+                        <option value="add">Add VAT to Net Amount</option>
+                        <option value="exclude">Exclude VAT from Gross</option>
+                    </select>
+                </div>
+                
+                <button class="btn" onclick="calculateVAT()">
+                    <i class="fas fa-calculator"></i> Calculate VAT
+                </button>
+                
+                <div class="result-box" id="vatResult">
+                    <div class="result-title">
+                        <i class="fas fa-file-invoice"></i> VAT Calculation Result
+                    </div>
+                    <div class="result-value" id="vatResultValue">₹ 0.00</div>
+                    <div class="result-subtext">
+                        <span>Net Amount: <strong id="vatNetAmount">₹ 0.00</strong></span>
+                        <span>VAT Amount: <strong id="vatAmountValue">₹ 0.00</strong></span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-content">
-                <p class="highlight-hello">Hello!</p>
-                <p class="highlight-name">
-                    I'm <strong>Vijay Suresh Patode</strong>, a <strong>Junior Accountant at Infosys</strong>.
-                </p>
-                <p class="highlight-hobbies">I love <strong>traveling, video editing</strong>, and <strong>exploring new things</strong>.</p>
+            
+            <!-- Percentage Calculator Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h2 class="tool-title">Percentage Calculator</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-tasks"></i> Calculation Type
+                    </label>
+                    <select id="percentageType" class="input-field" onchange="updatePercentageLabels()">
+                        <option value="percentageOf">What is X% of Y?</option>
+                        <option value="percentageIncrease">Percentage Increase</option>
+                        <option value="percentageDecrease">Percentage Decrease</option>
+                        <option value="percentageDifference">Percentage Difference</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label" id="percentageLabel1">
+                        <i class="fas fa-hashtag"></i> Number 1
+                    </label>
+                    <input type="number" id="percentageInput1" class="input-field" placeholder="Enter value" step="0.01">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label" id="percentageLabel2">
+                        <i class="fas fa-hashtag"></i> Number 2
+                    </label>
+                    <input type="number" id="percentageInput2" class="input-field" placeholder="Enter value" step="0.01">
+                </div>
+                
+                <button class="btn" onclick="calculatePercentage()">
+                    <i class="fas fa-calculator"></i> Calculate Percentage
+                </button>
+                
+                <div class="result-box" id="percentageResult">
+                    <div class="result-title">
+                        <i class="fas fa-percentage"></i> Percentage Result
+                    </div>
+                    <div class="result-value" id="percentageResultValue">0%</div>
+                    <div class="result-subtext" id="percentageResultText"></div>
+                </div>
+            </div>
+            
+            <!-- Compact Text Analyzer Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h2 class="tool-title">Text Analyzer</h2>
+                </div>
+                
+                <div class="text-analyzer-compact">
+                    <textarea id="characterText" class="text-analyzer-input" placeholder="Type or paste your text here..."></textarea>
+                    
+                    <div class="text-stats-compact">
+                        <div class="text-stat-compact">
+                            <span class="text-stat-value-compact" id="charCount">0</span>
+                            <span class="text-stat-label-compact">
+                                <i class="fas fa-font"></i> Characters
+                            </span>
+                        </div>
+                        <div class="text-stat-compact">
+                            <span class="text-stat-value-compact" id="wordCount">0</span>
+                            <span class="text-stat-label-compact">
+                                <i class="fas fa-file-word"></i> Words
+                            </span>
+                        </div>
+                        <div class="text-stat-compact">
+                            <span class="text-stat-value-compact" id="spaceCount">0</span>
+                            <span class="text-stat-label-compact">
+                                <i class="fas fa-space-shuttle"></i> Spaces
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-analyzer-tip">
+                        <i class="fas fa-lightbulb"></i> 
+                        <span id="analysisTip">Text dala toh sab stats automatically update hojayenge!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Currency Converter Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h2 class="tool-title">Currency Converter</h2>
+                </div>
+                
+                <div class="currency-card">
+                    <h2>💱 Currency Converter</h2>
+
+                    <input type="number" id="currencyAmount" class="currency-input" value="1" min="0" placeholder="Enter amount">
+
+                    <div class="currency-row">
+                        <select id="currencyFrom" class="currency-select"></select>
+                        <select id="currencyTo" class="currency-select"></select>
+                    </div>
+
+                    <div class="currency-result" id="currencyResult">Loading...</div>
+
+                    <div class="currency-footer">Live Exchange Rates</div>
+                </div>
+            </div>
+            
+            <!-- EMI Calculator Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h2 class="tool-title">EMI Calculator</h2>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-rupee-sign"></i> Loan Amount (₹)
+                    </label>
+                    <input type="number" id="loanAmount" class="input-field" placeholder="E.g. 5000000" min="0" step="1000">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-chart-line"></i> Interest Rate (%)
+                    </label>
+                    <input type="number" id="interestRate" class="input-field" value="7.5" min="0" max="20" step="0.1">
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">
+                        <i class="fas fa-calendar-alt"></i> Loan Tenure (Years)
+                    </label>
+                    <input type="number" id="loanTenure" class="input-field" value="20" min="1" max="30">
+                </div>
+                
+                <button class="btn" onclick="calculateEMI()">
+                    <i class="fas fa-calculator"></i> Calculate EMI
+                </button>
+                
+                <div class="result-box" id="emiResult">
+                    <div class="result-title">
+                        <i class="fas fa-file-invoice-dollar"></i> EMI Calculation
+                    </div>
+                    <div class="result-value" id="emiValue">₹ 0.00</div>
+                    <div class="result-subtext">
+                        <span>Total Payment: <strong id="totalPayment">₹ 0.00</strong></span>
+                        <span>Total Interest: <strong id="totalInterest">₹ 0.00</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Information Tabs -->
+        <section class="info-section">
+            <h2 class="section-title">Bidu's Accounting Expertise</h2>
+            
+            <div class="tab-buttons">
+                <button class="tab-btn" onclick="openTab('invoice')">
+                    <i class="fas fa-file-invoice"></i> Invoice Processing
+                </button>
+                <button class="tab-btn active" onclick="openTab('gst')">
+                    <i class="fas fa-receipt"></i> GST / VAT
+                </button>
+                <button class="tab-btn" onclick="openTab('matching')">
+                    <i class="fas fa-exchange-alt"></i> 2/3/4-Way Matching
+                </button>
+                <button class="tab-btn" onclick="openTab('p2p')">
+                    <i class="fas fa-sync-alt"></i> P2P Cycle
+                </button>
+                <button class="tab-btn" onclick="openTab('excel')">
+                    <i class="fas fa-file-excel"></i> Excel Tips
+                </button>
+            </div>
+            
+            <!-- Invoice Processing Tab -->
+            <div class="tab-content" id="invoice-tab">
+                <!-- Previous invoice processing content -->
+            </div>
+            
+            <!-- GST/VAT Tab -->
+            <div class="tab-content active" id="gst-tab">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">
+                        <i class="fas fa-chart-line"></i> SECTOR WISE VAT & GST – DEEP EXPLANATION (INDIAN ACCOUNTING)
+                    </h2>
+                    <p style="color: #cbd5e0;">Click buttons below to switch between VAT and GST information for each sector</p>
+                </div>
+                
+                <!-- VAT/GST Toggle Buttons -->
+                <div class="gst-vat-toggle">
+                    <button class="tax-toggle-btn vat-btn active" onclick="showVAT()">
+                        <i class="fas fa-money-bill-wave"></i> VAT Era
+                    </button>
+                    <button class="tax-toggle-btn gst-btn" onclick="showGST()">
+                        <i class="fas fa-receipt"></i> GST Era
+                    </button>
+                </div>
+                
+                <!-- Sectors Grid -->
+                <div class="sectors-container">
+                    <!-- Manufacturing Sector -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">1</div>
+                            <h3 class="sector-title">MANUFACTURING SECTOR</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-industry"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Raw material purchase par VAT</li>
+                                <li class="tax-point">Finished goods sale par VAT</li>
+                                <li class="tax-point">Input VAT credit limited tha</li>
+                                <li class="tax-point">Excise + VAT dono lagte the (double tax)</li>
+                            </ul>
+                            
+                            <div class="accounting-entry">
+                                Raw Material A/c        Dr<br>
+                                Input VAT A/c           Dr<br>
+                                To Vendor A/c           Cr
+                            </div>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-industry"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Raw material + finished goods par GST</li>
+                                <li class="tax-point">Excise removed</li>
+                                <li class="tax-point">Full Input Tax Credit (ITC)</li>
+                            </ul>
+                            
+                            <div class="accounting-entry">
+                                Raw Material A/c        Dr<br>
+                                Input GST A/c           Dr<br>
+                                To Vendor A/c           Cr
+                            </div>
+                        </div>
+                        
+                        <div class="key-difference">
+                            <strong>Key Difference:</strong><br>
+                            VAT → Cascading tax<br>
+                            GST → Seamless ITC
+                        </div>
+                    </div>
+                    
+                    <!-- Trading/Retail Sector -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">2</div>
+                            <h3 class="sector-title">TRADING / RETAIL SECTOR</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-store"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Purchase + resale par VAT</li>
+                                <li class="tax-point">Different states me different VAT rates</li>
+                                <li class="tax-point">CST issue in inter-state sales</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>VAT Risk:</strong><br>
+                                • Limited credit<br>
+                                • State-wise compliance
+                            </div>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-store"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Uniform GST rate across India</li>
+                                <li class="tax-point">IGST for inter-state sales</li>
+                                <li class="tax-point">Smooth ITC flow</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Impact:</strong><br>
+                                • Margin protected<br>
+                                • Compliance simplified
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Sector -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">3</div>
+                            <h3 class="sector-title">SERVICE SECTOR (IT / BPO / CONSULTING)</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-laptop-code"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">VAT mostly NOT applicable</li>
+                                <li class="tax-point">Service Tax applicable (separate law)</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Issue:</strong><br>
+                                VAT + Service tax segregation confusion
+                            </div>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-laptop-code"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Single GST on services</li>
+                                <li class="tax-point">SAC code based taxation</li>
+                                <li class="tax-point">Mostly IGST</li>
+                            </ul>
+                            
+                            <div class="accounting-entry">
+                                Customer A/c            Dr<br>
+                                To Service Income A/c   Cr<br>
+                                To Output IGST A/c      Cr
+                            </div>
+                            
+                            <div class="key-difference">
+                                <strong>Key Improvement:</strong><br>
+                                VAT era me tax split<br>
+                                GST era me single tax
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Construction/Real Estate -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">4</div>
+                            <h3 class="sector-title">CONSTRUCTION / REAL ESTATE</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-building"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Works contract par VAT + Service tax</li>
+                                <li class="tax-point">Complex valuation rules</li>
+                                <li class="tax-point">Partial VAT credit</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Risk:</strong><br>
+                                • Double taxation<br>
+                                • ITC confusion
+                            </div>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-building"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Under construction property taxable</li>
+                                <li class="tax-point">ITC restricted / optional</li>
+                                <li class="tax-point">Clearer law but still complex</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Focus:</strong><br>
+                                • ITC reversal<br>
+                                • Project-wise tracking
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FMCG Sector -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">5</div>
+                            <h3 class="sector-title">FMCG SECTOR</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-shopping-cart"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Multiple VAT slabs state-wise</li>
+                                <li class="tax-point">Pricing complexity</li>
+                                <li class="tax-point">ITC breaks</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-shopping-cart"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Standard slabs (0%, 5%, 12%, 18%)</li>
+                                <li class="tax-point">Central pricing strategy</li>
+                                <li class="tax-point">Strong ITC benefit</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Impact:</strong><br>
+                                • Better margin visibility<br>
+                                • Automation friendly
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pharma & Healthcare -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">6</div>
+                            <h3 class="sector-title">PHARMA & HEALTHCARE</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-pills"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Life saving drugs low VAT</li>
+                                <li class="tax-point">State dependent rates</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-pills"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Lower GST slabs continue</li>
+                                <li class="tax-point">Some services exempt</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Risk:</strong><br>
+                                • Exempt vs taxable mix<br>
+                                • Proportionate ITC reversal
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Row of Sectors -->
+                <div class="sectors-container" style="margin-top: 2rem;">
+                    <!-- Transport & Logistics -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">7</div>
+                            <h3 class="sector-title">TRANSPORT & LOGISTICS</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-truck"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">VAT on goods movement</li>
+                                <li class="tax-point">Service tax on freight</li>
+                                <li class="tax-point">CST issues</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-truck"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">GST + Reverse Charge (RCM)</li>
+                                <li class="tax-point">Unified taxation</li>
+                            </ul>
+                            
+                            <div class="accounting-entry">
+                                Expense A/c             Dr<br>
+                                To GST Payable A/c      Cr
+                            </div>
+                            
+                            <div class="key-difference">
+                                <strong>Key Change:</strong><br>
+                                VAT era = fragmented tax<br>
+                                GST era = single system
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Banking & Financial -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">8</div>
+                            <h3 class="sector-title">BANKING & FINANCIAL SERVICES</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-university"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">VAT on some charges</li>
+                                <li class="tax-point">Service tax on others</li>
+                                <li class="tax-point">Complex tax structure</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-university"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Fees & commission taxable</li>
+                                <li class="tax-point">Interest exempt</li>
+                                <li class="tax-point">Proportionate ITC reversal mandatory</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Focus:</strong><br>
+                                • ITC calculation<br>
+                                • Monthly reconciliation
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education & Health -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">9</div>
+                            <h3 class="sector-title">EDUCATION & HEALTH SERVICES</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-graduation-cap"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Mostly exempt</li>
+                                <li class="tax-point">No credit benefit</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-graduation-cap"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Mostly exempt continues</li>
+                                <li class="tax-point">ITC not allowed</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Impact:</strong><br>
+                                • GST becomes cost<br>
+                                • Expense increases
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Export / SEZ Sector -->
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <div class="sector-number">10</div>
+                            <h3 class="sector-title">EXPORT / SEZ SECTOR</h3>
+                        </div>
+                        
+                        <!-- VAT Era -->
+                        <div class="tax-era-section vat-era active">
+                            <h4 class="tax-era-title vat-era-title">
+                                <i class="fas fa-globe"></i> VAT ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">CST/VAT refund process</li>
+                                <li class="tax-point">Heavy documentation</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GST Era -->
+                        <div class="tax-era-section gst-era">
+                            <h4 class="tax-era-title gst-era-title">
+                                <i class="fas fa-globe"></i> GST ERA
+                            </h4>
+                            <ul class="tax-points">
+                                <li class="tax-point">Zero rated supply</li>
+                                <li class="tax-point">Full ITC refund allowed</li>
+                            </ul>
+                            
+                            <div class="key-difference">
+                                <strong>Accounting Impact:</strong><br>
+                                • Improved cash flow<br>
+                                • Refund tracking important
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="separator">
+                
+                <!-- Summary Section -->
+                <div class="summary-container">
+                    <h3 class="summary-title">
+                        <i class="fas fa-chart-bar"></i> VAT vs GST – SECTOR WISE SUMMARY
+                    </h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-sector">
+                                <i class="fas fa-industry"></i> Manufacturing
+                            </div>
+                            <div class="summary-vat">
+                                <strong>VAT:</strong> Excise + VAT burden
+                            </div>
+                            <div class="summary-gst">
+                                <strong>GST:</strong> Single tax + ITC
+                            </div>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <div class="summary-sector">
+                                <i class="fas fa-store"></i> Trading
+                            </div>
+                            <div class="summary-vat">
+                                <strong>VAT:</strong> State barriers
+                            </div>
+                            <div class="summary-gst">
+                                <strong>GST:</strong> Pan India trade
+                            </div>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <div class="summary-sector">
+                                <i class="fas fa-laptop-code"></i> Services
+                            </div>
+                            <div class="summary-vat">
+                                <strong>VAT:</strong> Not applicable
+                            </div>
+                            <div class="summary-gst">
+                                <strong>GST:</strong> Fully covered
+                            </div>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <div class="summary-sector">
+                                <i class="fas fa-truck"></i> Logistics
+                            </div>
+                            <div class="summary-vat">
+                                <strong>VAT:</strong> Fragmented
+                            </div>
+                            <div class="summary-gst">
+                                <strong>GST:</strong> Unified + RCM
+                            </div>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <div class="summary-sector">
+                                <i class="fas fa-globe"></i> Exports
+                            </div>
+                            <div class="summary-vat">
+                                <strong>VAT:</strong> Refund delay
+                            </div>
+                            <div class="summary-gst">
+                                <strong>GST:</strong> Zero rated + ITC refund
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Importance Section -->
+                <div class="importance-container">
+                    <h3 class="importance-title">
+                        <i class="fas fa-lightbulb"></i> WHY VAT & GST SECTOR KNOWLEDGE IS IMPORTANT
+                    </h3>
+                    <div class="importance-list">
+                        <div class="importance-item">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <p class="importance-text">Correct accounting treatment</p>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <p class="importance-text">Avoid tax loss</p>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <p class="importance-text">Better compliance</p>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-search"></i>
+                            <p class="importance-text">Audit readiness</p>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p class="importance-text">Strong practical understanding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Matching Tab -->
+            <div class="tab-content" id="matching-tab">
+                <div class="content-text">
+                    2-Way matching between PO and Invoice.
+                    3-Way matching with GRN.
+                    4-Way matching including quality.
+                    Tolerance checks.
+                    Blocking and release process.
+                </div>
+            </div>
+            
+            <!-- P2P Cycle Tab -->
+            <div class="tab-content" id="p2p-tab">
+                <div class="content-text">
+                    Purchase Requisition: User demand raise karta hai, system bolta hai "approval lao".
+                    Purchase Order: PR approve hua, PO bana aur vendor ko gaya.
+                    Goods Receipt: Material aaya, GRN post hua, godown khush.
+                    Invoice & Payment: Invoice match hua, payment run, vendor happy 😄
+                </div>
+            </div>
+            
+            <!-- Excel Tips Tab -->
+            <div class="tab-content" id="excel-tab">
+                <div class="content-text">
+                    Excel Tips & Tricks for Accountants:
+                    
+                    • Use VLOOKUP for quick data matching
+                    • PivotTables for summarizing large datasets
+                    • Conditional Formatting to highlight variances
+                    • Data Validation for error-free data entry
+                    • Power Query for cleaning and transforming data
+                </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>© 2024 Vijay Suresh Patode. All rights reserved.</p>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2024 Bidu Portfolio | Accounting Ka Baahubali | All Rights Reserved</p>
+        <p class="footer-text">"Kaam ekdum tight, aur style... Ye Baburao ka style hai re baba!"</p>
+        
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
     </footer>
-
+    
     <script>
-        // Initialize Particles.js for the galaxy effect
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 100,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
+        // Initialize Particles.js with new color scheme
+        particlesJS("particles-js", {
+            particles: {
+                number: { 
+                    value: 120, 
+                    density: { 
+                        enable: true, 
+                        value_area: 1000 
+                    } 
+                },
+                color: { 
+                    value: "#ff7e5f" 
+                },
+                shape: { 
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
                     }
                 },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "star",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
+                opacity: { 
+                    value: 0.6, 
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
                     }
                 },
-                "opacity": {
-                    "value": 0.4,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.1
+                size: { 
+                    value: 3, 
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.1,
+                        sync: false
                     }
                 },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 4,
-                        "size_min": 0.1
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ff7e5f",
+                    opacity: 0.3,
+                    width: 1
+                },
+                move: { 
+                    enable: true, 
+                    speed: 2.5, 
+                    direction: "none", 
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
                     }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.2,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 3,
-                    "random": true
                 }
             },
-            "retina_detect": true
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.header') && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Tab Switching
+        function openTab(tabName) {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Update active tab button
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.transform = 'translateY(0) scale(1)';
+            });
+            event.currentTarget.classList.add('active');
+            event.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
+            
+            // Show active tab content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `${tabName}-tab`) {
+                    setTimeout(() => {
+                        content.classList.add('active');
+                    }, 10);
+                }
+            });
+        }
+        
+        // GST/VAT Toggle Functions
+        function showVAT() {
+            const vatBtn = document.querySelector('.vat-btn');
+            const gstBtn = document.querySelector('.gst-btn');
+            const vatSections = document.querySelectorAll('.vat-era');
+            const gstSections = document.querySelectorAll('.gst-era');
+            
+            // Update buttons
+            vatBtn.classList.add('active');
+            gstBtn.classList.remove('active');
+            
+            // Show VAT, hide GST
+            vatSections.forEach(section => {
+                section.classList.add('active');
+            });
+            
+            gstSections.forEach(section => {
+                section.classList.remove('active');
+            });
+        }
+        
+        function showGST() {
+            const vatBtn = document.querySelector('.vat-btn');
+            const gstBtn = document.querySelector('.gst-btn');
+            const vatSections = document.querySelectorAll('.vat-era');
+            const gstSections = document.querySelectorAll('.gst-era');
+            
+            // Update buttons
+            vatBtn.classList.remove('active');
+            gstBtn.classList.add('active');
+            
+            // Show GST, hide VAT
+            vatSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            gstSections.forEach(section => {
+                section.classList.add('active');
+            });
+        }
+        
+        // Translator Modal Functions
+        function openTranslator() {
+            const modal = document.getElementById('translatorModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeTranslator() {
+            const modal = document.getElementById('translatorModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('translatorModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('translator-modal')) {
+                closeTranslator();
+            }
+        });
+        
+        // Compact Text Analyzer - Only 3 stats
+        function updateTextAnalysis() {
+            const text = document.getElementById('characterText').value;
+            const analysisTip = document.getElementById('analysisTip');
+            
+            // Calculate only 3 statistics
+            const stats = {
+                charCount: text.length,
+                wordCount: text.trim().split(/\s+/).filter(word => word.length > 0).length,
+                spaceCount: (text.match(/ /g) || []).length
+            };
+            
+            // Update stats display
+            document.getElementById('charCount').textContent = stats.charCount;
+            document.getElementById('wordCount').textContent = stats.wordCount;
+            document.getElementById('spaceCount').textContent = stats.spaceCount;
+            
+            // Add animation for new values
+            ['charCount', 'wordCount', 'spaceCount'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.style.animation = 'none';
+                    setTimeout(() => {
+                        el.style.animation = 'slideIn 0.3s ease';
+                    }, 10);
+                }
+            });
+            
+            // Update analysis tip
+            const analysisTips = [
+                "Text chhota rakhoge toh bill bhi chhota aayega!",
+                "Words kam rakhoge, time bachega!",
+                "Spaces adjust karo, formatting improve hoga!"
+            ];
+            
+            let tipIndex = 0;
+            if (text.length === 0) {
+                analysisTip.textContent = "Kuch text daalo, stats dikhayenge!";
+            } else if (text.length > 500) {
+                tipIndex = 0; // Text chhota rakhoge
+            } else if (stats.wordCount > 100) {
+                tipIndex = 1; // Words kam rakhoge
+            } else if (stats.spaceCount > text.length / 2) {
+                tipIndex = 2; // Spaces adjust karo
+            } else {
+                tipIndex = Math.floor(Math.random() * analysisTips.length);
+            }
+            
+            analysisTip.textContent = analysisTips[tipIndex];
+        }
+        
+        // Currency Converter
+        const currencyAmount = document.getElementById("currencyAmount");
+        const currencyFrom = document.getElementById("currencyFrom");
+        const currencyTo = document.getElementById("currencyTo");
+        const currencyResult = document.getElementById("currencyResult");
+
+        let currencyRates = {};
+
+        // Fetch currency rates
+        fetch("https://api.exchangerate-api.com/v4/latest/USD")
+        .then(res => res.json())
+        .then(data => {
+            currencyRates = data.rates;
+
+            // Populate currency dropdowns
+            Object.keys(currencyRates).forEach(currency => {
+                currencyFrom.innerHTML += `<option value="${currency}">${currency}</option>`;
+                currencyTo.innerHTML += `<option value="${currency}">${currency}</option>`;
+            });
+
+            // Set default values
+            currencyFrom.value = "USD";
+            currencyTo.value = "INR";
+            calculateCurrency();
+        })
+        .catch(error => {
+            console.error("Error fetching currency rates:", error);
+            currencyResult.innerText = "Failed to load exchange rates";
         });
 
-        // GSAP Animations
-        window.onload = function() {
-            // Animate text on the right side of the image
-            gsap.fromTo(".highlight-hello", {
-                opacity: 0,
-                y: -20
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 1.5,
-                ease: "power2.out"
-            });
+        function calculateCurrency(){
+            const amt = parseFloat(currencyAmount.value);
+            if (isNaN(amt) || amt < 0) {
+                currencyResult.innerText = "Please enter a valid amount";
+                return;
+            }
+            
+            const converted = (amt / currencyRates[currencyFrom.value]) * currencyRates[currencyTo.value];
+            currencyResult.innerText = `${amt} ${currencyFrom.value} = ${converted.toFixed(2)} ${currencyTo.value}`;
+        }
 
-            gsap.fromTo(".highlight-name", {
-                opacity: 0,
-                y: 20
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 1.5,
-                delay: 0.5,
-                ease: "power2.out"
-            });
+        // Add event listeners for currency converter
+        currencyAmount.addEventListener("input", calculateCurrency);
+        currencyFrom.addEventListener("change", calculateCurrency);
+        currencyTo.addEventListener("change", calculateCurrency);
 
-            gsap.fromTo(".highlight-hobbies", {
-                opacity: 0,
-                y: 20
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 1.5,
-                delay: 1,
-                ease: "power2.out"
+        // Initialize text analyzer on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add input event listener for text analyzer
+            document.getElementById('characterText').addEventListener('input', updateTextAnalysis);
+            
+            // Initialize text analysis
+            updateTextAnalysis();
+            
+            // Add smooth scrolling for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    
+                    // If it's a hash link
+                    if (href.startsWith('#')) {
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    link.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
             });
-        };
+        });
+        
+        // VAT Calculator
+        function calculateVAT() {
+            const amount = parseFloat(document.getElementById('vatAmount').value);
+            const rate = parseFloat(document.getElementById('vatRate').value);
+            const type = document.getElementById('vatType').value;
+            
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount');
+                return;
+            }
+            
+            let netAmount, vatAmount, grossAmount;
+            
+            if (type === 'add') {
+                netAmount = amount;
+                vatAmount = amount * (rate / 100);
+                grossAmount = netAmount + vatAmount;
+                
+                document.getElementById('vatResultValue').textContent = `₹ ${grossAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                document.getElementById('vatNetAmount').textContent = `₹ ${netAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                document.getElementById('vatAmountValue').textContent = `₹ ${vatAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            } else {
+                grossAmount = amount;
+                netAmount = amount / (1 + (rate / 100));
+                vatAmount = grossAmount - netAmount;
+                
+                document.getElementById('vatResultValue').textContent = `₹ ${netAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                document.getElementById('vatNetAmount').textContent = `₹ ${netAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                document.getElementById('vatAmountValue').textContent = `₹ ${vatAmount.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            }
+            
+            const resultBox = document.getElementById('vatResult');
+            resultBox.classList.remove('show');
+            void resultBox.offsetWidth; // Trigger reflow
+            resultBox.classList.add('show');
+        }
+        
+        // Percentage Calculator
+        function updatePercentageLabels() {
+            const type = document.getElementById('percentageType').value;
+            const label1 = document.getElementById('percentageLabel1');
+            const label2 = document.getElementById('percentageLabel2');
+            
+            switch(type) {
+                case 'percentageOf':
+                    label1.innerHTML = '<i class="fas fa-percentage"></i> Percentage (%)';
+                    label2.innerHTML = '<i class="fas fa-hashtag"></i> Number';
+                    break;
+                case 'percentageIncrease':
+                    label1.innerHTML = '<i class="fas fa-arrow-up"></i> Initial Number';
+                    label2.innerHTML = '<i class="fas fa-arrow-up"></i> Final Number';
+                    break;
+                case 'percentageDecrease':
+                    label1.innerHTML = '<i class="fas fa-arrow-down"></i> Initial Number';
+                    label2.innerHTML = '<i class="fas fa-arrow-down"></i> Final Number';
+                    break;
+                case 'percentageDifference':
+                    label1.innerHTML = '<i class="fas fa-exchange-alt"></i> Number 1';
+                    label2.innerHTML = '<i class="fas fa-exchange-alt"></i> Number 2';
+                    break;
+            }
+        }
+        
+        function calculatePercentage() {
+            const type = document.getElementById('percentageType').value;
+            const num1 = parseFloat(document.getElementById('percentageInput1').value);
+            const num2 = parseFloat(document.getElementById('percentageInput2').value);
+            
+            if (!num1 || !num2) {
+                alert('Please enter valid numbers');
+                return;
+            }
+            
+            let result, text;
+            
+            switch(type) {
+                case 'percentageOf':
+                    result = (num1 / 100) * num2;
+                    document.getElementById('percentageResultValue').textContent = result.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                    document.getElementById('percentageResultText').textContent = `${num1}% of ${num2} is ${result.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                    break;
+                    
+                case 'percentageIncrease':
+                    result = ((num2 - num1) / num1) * 100;
+                    document.getElementById('percentageResultValue').textContent = `${result.toFixed(2)}%`;
+                    document.getElementById('percentageResultText').textContent = `From ${num1} to ${num2} is a ${result.toFixed(2)}% increase`;
+                    break;
+                    
+                case 'percentageDecrease':
+                    result = ((num1 - num2) / num1) * 100;
+                    document.getElementById('percentageResultValue').textContent = `${result.toFixed(2)}%`;
+                    document.getElementById('percentageResultText').textContent = `From ${num1} to ${num2} is a ${result.toFixed(2)}% decrease`;
+                    break;
+                    
+                case 'percentageDifference':
+                    result = (Math.abs(num1 - num2) / ((num1 + num2) / 2)) * 100;
+                    document.getElementById('percentageResultValue').textContent = `${result.toFixed(2)}%`;
+                    document.getElementById('percentageResultText').textContent = `Difference between ${num1} and ${num2} is ${result.toFixed(2)}%`;
+                    break;
+            }
+            
+            const resultBox = document.getElementById('percentageResult');
+            resultBox.classList.remove('show');
+            void resultBox.offsetWidth;
+            resultBox.classList.add('show');
+        }
+        
+        // Initialize percentage labels
+        updatePercentageLabels();
+        
+        // EMI Calculator
+        function calculateEMI() {
+            const principal = parseFloat(document.getElementById('loanAmount').value);
+            const annualRate = parseFloat(document.getElementById('interestRate').value);
+            const years = parseInt(document.getElementById('loanTenure').value);
+            
+            if (!principal || principal <= 0 || !years || years <= 0) {
+                alert('Please enter valid loan details');
+                return;
+            }
+            
+            const monthlyRate = annualRate / 12 / 100;
+            const months = years * 12;
+            const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / 
+                        (Math.pow(1 + monthlyRate, months) - 1);
+            const total = emi * months;
+            const interest = total - principal;
+            
+            document.getElementById('emiValue').textContent = `₹ ${emi.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('totalPayment').textContent = `₹ ${total.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('totalInterest').textContent = `₹ ${interest.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            
+            const resultBox = document.getElementById('emiResult');
+            resultBox.classList.remove('show');
+            void resultBox.offsetWidth;
+            resultBox.classList.add('show');
+        }
     </script>
 </body>
 </html>
