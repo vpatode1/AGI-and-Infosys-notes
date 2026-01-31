@@ -1615,9 +1615,306 @@
             </div>
             
             <!-- Invoice Processing Tab -->
-            <div class="tab-content" id="invoice-tab">
-                <!-- Previous invoice processing content -->
+<div class="tab-content" id="invoice-tab">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">
+            <i class="fas fa-file-invoice"></i> INVOICE PROCESSING – SIMPLE EXPLANATION
+        </h2>
+        <p style="color: #cbd5e0; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            Invoice processing ka matlab hota hai vendor se aayi hui invoice ko 
+            receive karna, verify karna, system me post karna aur payment ke liye clear karna.
+        </p>
+    </div>
+    
+    <!-- Main Goal Section -->
+    <div class="sector-card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(255, 153, 102, 0.1) 100%);">
+        <div class="sector-header">
+            <div class="sector-number" style="background: var(--gradient-accent);">
+                <i class="fas fa-bullseye"></i>
             </div>
+            <h3 class="sector-title">GOAL OF INVOICE PROCESSING</h3>
+        </div>
+        <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+            <ul class="tax-points">
+                <li class="tax-point">Right vendor - sahi vendor ko payment</li>
+                <li class="tax-point">Right amount - sahi amount pay karna</li>
+                <li class="tax-point">Right tax - tax calculation sahi hona</li>
+                <li class="tax-point">Right time payment - time par payment</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Steps Container -->
+    <div class="sectors-container">
+        <!-- Step 1 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">1</div>
+                <h3 class="sector-title">INVOICE RECEIVING</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-envelope"></i> RECEIVING METHODS
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Email (PDF format)</li>
+                    <li class="tax-point">Courier / hard copy</li>
+                    <li class="tax-point">Vendor portal (Ariba etc.)</li>
+                </ul>
+                
+                <div class="key-difference" style="margin-top: 1rem;">
+                    <strong>Basic Checks:</strong><br>
+                    • Invoice number<br>
+                    • Invoice date<br>
+                    • Vendor name<br>
+                    • Total amount
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">2</div>
+                <h3 class="sector-title">BASIC VALIDATION</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-check-circle"></i> VERIFICATION CHECKS
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Invoice duplicate to nahi hai</li>
+                    <li class="tax-point">Vendor master me active hai ya nahi</li>
+                    <li class="tax-point">Invoice PO based hai ya Non-PO</li>
+                </ul>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    Validation successful = ✅<br>
+                    Validation failed = ❌ (Block)
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">3</div>
+                <h3 class="sector-title">PO / MATCHING PROCESS</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-exchange-alt"></i> MATCHING TYPES
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point"><strong>2-Way Match:</strong> PO vs Invoice</li>
+                    <li class="tax-point"><strong>3-Way Match:</strong> PO vs GRN vs Invoice</li>
+                    <li class="tax-point"><strong>4-Way Match:</strong> PO vs GRN vs Invoice vs Quality</li>
+                </ul>
+                
+                <div class="key-difference" style="margin-top: 1rem;">
+                    <strong>Matching Parameters:</strong><br>
+                    • Quantity match<br>
+                    • Rate match<br>
+                    • Amount match
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">4</div>
+                <h3 class="sector-title">TAX CALCULATION (GST/VAT)</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-percentage"></i> TAX CHECKS
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">CGST / SGST / IGST verification</li>
+                    <li class="tax-point">VAT percentage calculation</li>
+                    <li class="tax-point">Tax base amount vs tax amount</li>
+                </ul>
+                
+                <div class="key-difference" style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);">
+                    <strong style="color: var(--vat-color);">Warning:</strong><br>
+                    Galat tax hone par invoice block ho sakti hai
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Second Row of Steps -->
+    <div class="sectors-container" style="margin-top: 2rem;">
+        <!-- Step 5 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">5</div>
+                <h3 class="sector-title">ACCOUNTING & CODING</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-code"></i> ASSIGNMENT DETAILS
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">GL Account assignment</li>
+                    <li class="tax-point">Cost Center allocation</li>
+                    <li class="tax-point">Internal Order / WBS element</li>
+                </ul>
+                
+                <div class="key-difference" style="margin-top: 1rem;">
+                    <strong>Accounting Impact:</strong><br>
+                    Expense kis department ka hai - yeh decide hota hai
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">6</div>
+                <h3 class="sector-title">POSTING IN ERP</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-database"></i> SAP / ORACLE PROCESSING
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Park kiya jata hai (review ke liye)</li>
+                    <li class="tax-point">Post kiya jata hai (final accounting)</li>
+                </ul>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    Expense A/c    Dr<br>
+                    GST A/c        Dr<br>
+                    To Vendor A/c  Cr
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 7 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number">7</div>
+                <h3 class="sector-title">APPROVAL & PAYMENT</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-check-double"></i> FINAL STAGES
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Invoice approval workflow</li>
+                    <li class="tax-point">Due date ke according payment</li>
+                    <li class="tax-point">Payment ke baad invoice clear</li>
+                </ul>
+                
+                <div class="key-difference" style="background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);">
+                    <strong style="color: var(--gst-color);">Success Status:</strong><br>
+                    Vendor ✅ Paid<br>
+                    Invoice ✅ Cleared<br>
+                    Accounting ✅ Complete
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Common Issues Section -->
+    <div class="summary-container" style="margin-top: 3rem;">
+        <h3 class="summary-title">
+            <i class="fas fa-exclamation-triangle"></i> COMMON ISSUES IN INVOICE PROCESSING
+        </h3>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <div class="summary-sector">
+                    <i class="fas fa-copy"></i> Duplicate Invoice
+                </div>
+                <div class="summary-gst">
+                    <strong>Solution:</strong> System validation & checks
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="summary-sector">
+                    <i class="fas fa-money-bill-wave"></i> Price Mismatch
+                </div>
+                <div class="summary-gst">
+                    <strong>Solution:</strong> PO matching required
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="summary-sector">
+                    <i class="fas fa-percentage"></i> Tax Mismatch
+                </div>
+                <div class="summary-gst">
+                    <strong>Solution:</strong> Tax configuration check
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="summary-sector">
+                    <i class="fas fa-sitemap"></i> Wrong Cost Center
+                </div>
+                <div class="summary-gst">
+                    <strong>Solution:</strong> Proper coding training
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="summary-sector">
+                    <i class="fas fa-user-tie"></i> Vendor Master Error
+                </div>
+                <div class="summary-gst">
+                    <strong>Solution:</strong> Vendor data maintenance
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Process Flow Diagram -->
+    <div class="importance-container" style="margin-top: 3rem;">
+        <h3 class="importance-title">
+            <i class="fas fa-project-diagram"></i> INVOICE PROCESSING FLOW
+        </h3>
+        <div class="importance-list">
+            <div class="importance-item">
+                <i class="fas fa-envelope-open-text"></i>
+                <p class="importance-text">Invoice Receive</p>
+                <small>Step 1</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-search"></i>
+                <p class="importance-text">Validation Check</p>
+                <small>Step 2</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-exchange-alt"></i>
+                <p class="importance-text">PO Matching</p>
+                <small>Step 3</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-percentage"></i>
+                <p class="importance-text">Tax Calculation</p>
+                <small>Step 4</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-code"></i>
+                <p class="importance-text">Accounting Coding</p>
+                <small>Step 5</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-database"></i>
+                <p class="importance-text">ERP Posting</p>
+                <small>Step 6</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-check-circle"></i>
+                <p class="importance-text">Approval & Payment</p>
+                <small>Step 7</small>
+            </div>
+        </div>
+    </div>
+</div>
             
             <!-- GST/VAT Tab -->
             <div class="tab-content active" id="gst-tab">
@@ -2157,39 +2454,1423 @@
                 </div>
             </div>
             
-            <!-- Matching Tab -->
-            <div class="tab-content" id="matching-tab">
-                <div class="content-text">
-                    2-Way matching between PO and Invoice.
-                    3-Way matching with GRN.
-                    4-Way matching including quality.
-                    Tolerance checks.
-                    Blocking and release process.
+           <!-- Matching Tab -->
+<div class="tab-content" id="matching-tab">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">
+            <i class="fas fa-exchange-alt"></i> 2-WAY, 3-WAY & 4-WAY MATCH – DETAILED EXPLANATION
+        </h2>
+        <p style="color: #cbd5e0; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            (INDIAN ACCOUNTING & INVOICE PROCESSING)
+        </p>
+    </div>
+    
+    <!-- What is Way Match Section -->
+    <div class="sector-card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);">
+        <div class="sector-header">
+            <div class="sector-number" style="background: var(--gradient-secondary);">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h3 class="sector-title">WHAT IS WAY MATCH?</h3>
+        </div>
+        <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+            <p style="color: #e2e8f0; line-height: 1.6; padding: 1rem 0;">
+                Way Match ka matlab hota hai:<br>
+                Invoice ko verify karna before payment,<br>
+                taaki galat payment, fraud, ya audit issue na aaye.
+            </p>
+            <div class="key-difference" style="background: rgba(255, 255, 255, 0.05);">
+                <strong style="color: var(--accent);">Invoice processing ka main control yahi hota hai.</strong>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Matching Types Grid -->
+    <div class="sectors-container">
+        <!-- 2-Way Match -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">2</div>
+                <h3 class="sector-title">2-WAY MATCH</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-file-invoice"></i> DOCUMENTS INVOLVED
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Purchase Order (PO)</li>
+                    <li class="tax-point">Vendor Invoice</li>
+                </ul>
+                
+                <h4 class="tax-era-title vat-era-title" style="margin-top: 1.5rem;">
+                    <i class="fas fa-check-circle"></i> CHECKS PERFORMED
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Vendor Name</li>
+                    <li class="tax-point">PO Number</li>
+                    <li class="tax-point">Quantity</li>
+                    <li class="tax-point">Rate / Price</li>
+                    <li class="tax-point">Tax calculation (VAT / GST)</li>
+                </ul>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>EXAMPLE:</strong><br>
+                    PO: Printer, Qty: 5, Rate: 10,000<br>
+                    Invoice: Qty: 5, Rate: 10,000<br>
+                    <span style="color: var(--gst-color);">STATUS: MATCH ✔️</span>
+                </div>
+                
+                <div class="key-difference" style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%); margin-top: 1rem;">
+                    <strong>WHERE USED:</strong><br>
+                    • Service invoices<br>
+                    • AMC / Consulting<br>
+                    • IT Services<br>
+                    • Low risk purchases<br><br>
+                    <strong style="color: #e74c3c;">RISK LEVEL: HIGH</strong><br>
+                    (Goods receipt verification nahi hota)
                 </div>
             </div>
+        </div>
+        
+        <!-- 3-Way Match -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">3</div>
+                <h3 class="sector-title">3-WAY MATCH (MOST IMPORTANT)</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-clipboard-list"></i> DOCUMENTS INVOLVED
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Purchase Order (PO)</li>
+                    <li class="tax-point">Goods Receipt Note (GRN)</li>
+                    <li class="tax-point">Vendor Invoice</li>
+                </ul>
+                
+                <h4 class="tax-era-title vat-era-title" style="margin-top: 1.5rem;">
+                    <i class="fas fa-check-double"></i> CHECKS PERFORMED
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Quantity: PO vs GRN vs Invoice</li>
+                    <li class="tax-point">Price: PO vs Invoice</li>
+                    <li class="tax-point">Tax: Invoice</li>
+                    <li class="tax-point">Vendor & PO reference</li>
+                </ul>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>EXAMPLE:</strong><br>
+                    PO Quantity: 100 Units<br>
+                    GRN Quantity: 95 Units<br>
+                    Invoice Quantity: 100 Units<br>
+                    <span style="color: #e74c3c;">STATUS: MISMATCH ❌ BLOCKED</span><br>
+                    Payment allowed only for 95 Units
+                </div>
+                
+                <div class="key-difference" style="background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(230, 126, 34, 0.1) 100%); margin-top: 1rem;">
+                    <strong>WHERE USED:</strong><br>
+                    • Manufacturing companies<br>
+                    • FMCG<br>
+                    • Trading<br>
+                    • Retail<br>
+                    • Pharma<br><br>
+                    <strong style="color: #f39c12;">RISK LEVEL: MEDIUM</strong><br>
+                    (Goods received confirmation available)
+                </div>
+            </div>
+        </div>
+        
+        <!-- 4-Way Match -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">4</div>
+                <h3 class="sector-title">4-WAY MATCH (ADVANCED CONTROL)</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-vial"></i> DOCUMENTS INVOLVED
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Purchase Order (PO)</li>
+                    <li class="tax-point">Goods Receipt Note (GRN)</li>
+                    <li class="tax-point">Vendor Invoice</li>
+                    <li class="tax-point">Quality Inspection Report</li>
+                </ul>
+                
+                <h4 class="tax-era-title vat-era-title" style="margin-top: 1.5rem;">
+                    <i class="fas fa-clipboard-check"></i> CHECKS PERFORMED
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Quantity</li>
+                    <li class="tax-point">Price</li>
+                    <li class="tax-point">Tax</li>
+                    <li class="tax-point">Quality approval</li>
+                </ul>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>EXAMPLE:</strong><br>
+                    PO: 100 KG Raw Material<br>
+                    GRN: 100 KG<br>
+                    Quality Approved: 90 KG<br>
+                    Invoice: 100 KG<br>
+                    <span style="color: #27ae60;">STATUS: 90 KG Approved ✔️</span><br>
+                    10 KG Rejected ❌
+                </div>
+                
+                <div class="key-difference" style="background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%); margin-top: 1rem;">
+                    <strong>WHERE USED:</strong><br>
+                    • Pharma industry<br>
+                    • Chemical plants<br>
+                    • Automobile sector<br>
+                    • Aerospace<br>
+                    • High risk materials<br><br>
+                    <strong style="color: #27ae60;">RISK LEVEL: LOW</strong><br>
+                    (Quantity + Quality both controlled)
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Accounting Entry Section -->
+    <div class="summary-container" style="margin-top: 3rem;">
+        <h3 class="summary-title">
+            <i class="fas fa-book"></i> ACCOUNTING ENTRY – 3 WAY MATCH
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                <h4 style="color: var(--accent); margin-bottom: 1rem;">
+                    <i class="fas fa-sign-in-alt"></i> AT GRN TIME:
+                </h4>
+                <div class="accounting-entry" style="background: rgba(26, 26, 46, 0.6);">
+                    Inventory / Expense A/c    Dr<br>
+                    To GR/IR A/c               Cr
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    Goods receive hote hi temporary account me post hota hai
+                </p>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                <h4 style="color: var(--accent); margin-bottom: 1rem;">
+                    <i class="fas fa-sign-out-alt"></i> AT INVOICE POSTING:
+                </h4>
+                <div class="accounting-entry" style="background: rgba(26, 26, 46, 0.6);">
+                    GR/IR A/c                  Dr<br>
+                    Input GST / VAT A/c        Dr<br>
+                    To Vendor A/c              Cr
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    Invoice post hone par temporary account clear hota hai
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Comparison Table -->
+    <div class="importance-container" style="margin-top: 3rem;">
+        <h3 class="importance-title">
+            <i class="fas fa-columns"></i> COMPARISON TABLE
+        </h3>
+        <div class="importance-list" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="importance-item">
+                <div style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                    <span style="color: white; font-weight: bold; font-size: 1.2rem;">2</span>
+                </div>
+                <h4 style="color: #e74c3c;">2-Way Match</h4>
+                <div style="text-align: left; margin-top: 0.5rem;">
+                    <p style="color: #cbd5e0; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                        <strong>Documents:</strong> PO + Invoice
+                    </p>
+                    <p style="color: #e74c3c; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                        <strong>Risk:</strong> High
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.85rem;">
+                        <strong>Used for:</strong> Services
+                    </p>
+                </div>
+            </div>
+            
+            <div class="importance-item">
+                <div style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                    <span style="color: white; font-weight: bold; font-size: 1.2rem;">3</span>
+                </div>
+                <h4 style="color: #f39c12;">3-Way Match</h4>
+                <div style="text-align: left; margin-top: 0.5rem;">
+                    <p style="color: #cbd5e0; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                        <strong>Documents:</strong> PO + GRN + Invoice
+                    </p>
+                    <p style="color: #f39c12; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                        <strong>Risk:</strong> Medium
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.85rem;">
+                        <strong>Used for:</strong> Goods purchase
+                    </p>
+                </div>
+            </div>
+            
+            <div class="importance-item">
+                <div style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                    <span style="color: white; font-weight: bold; font-size: 1.2rem;">4</span>
+                </div>
+                <h4 style="color: #27ae60;">4-Way Match</h4>
+                <div style="text-align: left; margin-top: 0.5rem;">
+                    <p style="color: #cbd5e0; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                        <strong>Documents:</strong> PO + GRN + Invoice + Quality
+                    </p>
+                    <p style="color: #27ae60; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                        <strong>Risk:</strong> Low
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.85rem;">
+                        <strong>Used for:</strong> Critical materials
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Common Blocking Reasons -->
+    <div class="sector-card" style="margin-top: 3rem;">
+        <div class="sector-header">
+            <div class="sector-number" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                <i class="fas fa-ban"></i>
+            </div>
+            <h3 class="sector-title">COMMON INVOICE BLOCKING REASONS</h3>
+        </div>
+        <div class="tax-era-section vat-era active">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ Quantity mismatch</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">PO vs GRN vs Invoice quantity difference</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ Price variance</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">PO price vs Invoice price difference</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ GST / VAT mismatch</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Wrong tax code or calculation</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ PO expired</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">PO validity date passed</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ Wrong tax code</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Incorrect HSN/SAC code</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ GRN not posted</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Goods receipt not done in system</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <p style="color: #e74c3c; font-weight: 600;">❌ Quality rejection</p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">QC department rejected material</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Interview Ready Points -->
+    <div class="summary-container" style="margin-top: 3rem;">
+        <h3 class="summary-title">
+            <i class="fas fa-user-graduate"></i> INTERVIEW READY POINTS
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3498db;">
+                <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">2-way match checks commercial accuracy</p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Focuses on price and terms matching</p>
+            </div>
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3498db;">
+                <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">3-way match checks quantity accuracy</p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Verifies actual goods received vs invoiced</p>
+            </div>
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3498db;">
+                <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">4-way match checks quantity + quality</p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Ensures quality standards are met</p>
+            </div>
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3498db;">
+                <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">3-way match is mandatory for inventory</p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Essential for stock accuracy and valuation</p>
+            </div>
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3498db;">
+                <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">4-way match for regulated industries</p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Used in pharma, chemical, automotive sectors</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Final Summary -->
+    <div class="importance-container" style="margin-top: 3rem;">
+        <h3 class="importance-title">
+            <i class="fas fa-trophy"></i> FINAL SUMMARY
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem;">
+            <div style="text-align: center; background: rgba(231, 76, 60, 0.1); padding: 2rem; border-radius: 12px; border: 3px solid #e74c3c;">
+                <div style="font-size: 3rem; color: #e74c3c; margin-bottom: 1rem;">
+                    2
+                </div>
+                <h4 style="color: #e74c3c; font-size: 1.3rem; margin-bottom: 0.5rem;">
+                    2-Way Match
+                </h4>
+                <p style="color: #e2e8f0; font-weight: 600; font-size: 1.1rem;">
+                    Fast but risky
+                </p>
+                <p style="color: #cbd5e0; margin-top: 0.5rem; font-size: 0.9rem;">
+                    PO + Invoice matching<br>
+                    Service-based invoices
+                </p>
+            </div>
+            
+            <div style="text-align: center; background: rgba(243, 156, 18, 0.1); padding: 2rem; border-radius: 12px; border: 3px solid #f39c12;">
+                <div style="font-size: 3rem; color: #f39c12; margin-bottom: 1rem;">
+                    3
+                </div>
+                <h4 style="color: #f39c12; font-size: 1.3rem; margin-bottom: 0.5rem;">
+                    3-Way Match
+                </h4>
+                <p style="color: #e2e8f0; font-weight: 600; font-size: 1.1rem;">
+                    Balanced & most used
+                </p>
+                <p style="color: #cbd5e0; margin-top: 0.5rem; font-size: 0.9rem;">
+                    PO + GRN + Invoice<br>
+                    Goods purchase standard
+                </p>
+            </div>
+            
+            <div style="text-align: center; background: rgba(39, 174, 96, 0.1); padding: 2rem; border-radius: 12px; border: 3px solid #27ae60;">
+                <div style="font-size: 3rem; color: #27ae60; margin-bottom: 1rem;">
+                    4
+                </div>
+                <h4 style="color: #27ae60; font-size: 1.3rem; margin-bottom: 0.5rem;">
+                    4-Way Match
+                </h4>
+                <p style="color: #e2e8f0; font-weight: 600; font-size: 1.1rem;">
+                    Strongest control system
+                </p>
+                <p style="color: #cbd5e0; margin-top: 0.5rem; font-size: 0.9rem;">
+                    PO + GRN + Invoice + Quality<br>
+                    Critical materials only
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
             
             <!-- P2P Cycle Tab -->
-            <div class="tab-content" id="p2p-tab">
-                <div class="content-text">
-                    Purchase Requisition: User demand raise karta hai, system bolta hai "approval lao".
-                    Purchase Order: PR approve hua, PO bana aur vendor ko gaya.
-                    Goods Receipt: Material aaya, GRN post hua, godown khush.
-                    Invoice & Payment: Invoice match hua, payment run, vendor happy 😄
+<div class="tab-content" id="p2p-tab">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">
+            <i class="fas fa-sync-alt"></i> P2P CYCLE (PROCURE TO PAY) – END TO END FLOW
+        </h2>
+        <p style="color: #cbd5e0; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            (INDIAN ACCOUNTING + GST + SAP VIEW)
+        </p>
+    </div>
+    
+    <!-- What is P2P Cycle Section -->
+    <div class="sector-card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(142, 68, 173, 0.1) 100%);">
+        <div class="sector-header">
+            <div class="sector-number" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <h3 class="sector-title">WHAT IS P2P CYCLE?</h3>
+        </div>
+        <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+            <p style="color: #e2e8f0; line-height: 1.6; padding: 1rem 0;">
+                P2P ka full form hai <strong>PROCURE TO PAY</strong>.<br><br>
+                P2P cycle ek complete process hai jisme:<br>
+                • Requirement raise hoti hai<br>
+                • Vendor se purchase hota hai<br>
+                • Invoice process hota hai<br>
+                • Payment kiya jata hai
+            </p>
+            <div class="key-difference" style="background: rgba(255, 255, 255, 0.05); margin-top: 1rem;">
+                <strong style="color: var(--accent);">P2P CYCLE GOAL:</strong><br>
+                • Right material<br>
+                • Right price<br>
+                • Right tax<br>
+                • Right vendor<br>
+                • Right payment time
+            </div>
+        </div>
+    </div>
+    
+    <!-- P2P Steps Timeline -->
+    <div style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%); 
+                border-radius: 12px; padding: 2rem; margin: 3rem 0; border: 3px solid var(--accent);">
+        <h3 style="color: var(--accent); text-align: center; margin-bottom: 2rem; font-size: 1.5rem;">
+            <i class="fas fa-project-diagram"></i> P2P CYCLE - 9 STEPS FLOW
+        </h3>
+        
+        <!-- Step 1 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(255, 126, 95, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: var(--gradient-accent);">1</div>
+                <h3 class="sector-title">PURCHASE REQUISITION (PR)</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Internal request to purchase goods or services</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-users"></i> Raised by:
+                        </p>
+                        <p style="color: #cbd5e0;">User department / Plant team</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-keyboard"></i> SAP T-Code:
+                        </p>
+                        <p style="color: #cbd5e0; font-family: 'Courier New', monospace;">ME51N – Create PR</p>
+                    </div>
+                </div>
+                <div class="key-difference" style="margin-top: 1rem; background: rgba(255, 126, 95, 0.1);">
+                    <strong>Contains:</strong><br>
+                    • Item description • Quantity • Expected price • Cost center
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(52, 152, 219, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">2</div>
+                <h3 class="sector-title">VENDOR SELECTION</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Approved vendor ko select karna</p>
+                    </div>
+                    <div>
+                        <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle"></i> Checks:
+                        </p>
+                        <p style="color: #cbd5e0;">Vendor master active • GST registration • PAN details</p>
+                    </div>
+                    <div>
+                        <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-keyboard"></i> SAP T-Code:
+                        </p>
+                        <p style="color: #cbd5e0; font-family: 'Courier New', monospace;">XK01 / BP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(46, 204, 113, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">3</div>
+                <h3 class="sector-title">PURCHASE ORDER (PO)</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #2ecc71; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Legal document sent to vendor</p>
+                    </div>
+                    <div>
+                        <p style="color: #2ecc71; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-keyboard"></i> SAP T-Code:
+                        </p>
+                        <p style="color: #cbd5e0; font-family: 'Courier New', monospace;">ME21N – Create PO</p>
+                    </div>
+                    <div>
+                        <p style="color: #2ecc71; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-book"></i> Accounting Impact:
+                        </p>
+                        <p style="color: #cbd5e0;">No accounting entry at PO stage</p>
+                    </div>
+                </div>
+                <div class="key-difference" style="margin-top: 1rem; background: rgba(46, 204, 113, 0.1);">
+                    <strong>Contains:</strong><br>
+                    • PO number • Material details • Quantity & rate • GST details
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(243, 156, 18, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">4</div>
+                <h3 class="sector-title">GOODS RECEIPT (GRN)</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #f39c12; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Confirmation that goods are received</p>
+                    </div>
+                    <div>
+                        <p style="color: #f39c12; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-users"></i> Created by:
+                        </p>
+                        <p style="color: #cbd5e0;">Stores / Warehouse team</p>
+                    </div>
+                    <div>
+                        <p style="color: #f39c12; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-keyboard"></i> SAP T-Code:
+                        </p>
+                        <p style="color: #cbd5e0; font-family: 'Courier New', monospace;">MIGO – Goods Receipt</p>
+                    </div>
+                </div>
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>Accounting Entry:</strong><br>
+                    Inventory / Expense A/c    Dr<br>
+                    To GR/IR A/c               Cr
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(231, 76, 60, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">5</div>
+                <h3 class="sector-title">INVOICE RECEIPT (IR)</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Vendor invoice received & posted</p>
+                    </div>
+                    <div>
+                        <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-keyboard"></i> SAP T-Code:
+                        </p>
+                        <p style="color: #cbd5e0; font-family: 'Courier New', monospace;">MIRO – Invoice Posting</p>
+                    </div>
+                </div>
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>Accounting Entry:</strong><br>
+                    GR/IR A/c                  Dr<br>
+                    Input GST A/c              Dr<br>
+                    To Vendor A/c              Cr
+                </div>
+                <div class="key-difference" style="margin-top: 1rem; background: rgba(231, 76, 60, 0.1);">
+                    <strong>Checks:</strong><br>
+                    • 2-way/3-way/4-way match • GST calculation • Duplicate invoice check
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(155, 89, 182, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">6</div>
+                <h3 class="sector-title">INVOICE VERIFICATION</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #9b59b6; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-search"></i> Verification includes:
+                        </p>
+                        <p style="color: #cbd5e0;">Quantity match • Price match • GST rate & split</p>
+                    </div>
+                    <div>
+                        <p style="color: #9b59b6; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-check-circle"></i> Result:
+                        </p>
+                        <p style="color: #cbd5e0;">Invoice posted OR Invoice blocked for payment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 7 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(52, 152, 219, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">7</div>
+                <h3 class="sector-title">PAYMENT RUN</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Vendor ko payment process karna</p>
+                    </div>
+                    <div>
+                        <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-keyboard"></i> SAP T-Code:
+                        </p>
+                        <p style="color: #cbd5e0; font-family: 'Courier New', monospace;">F110 – Automatic Payment Run</p>
+                    </div>
+                    <div>
+                        <p style="color: #3498db; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-money-bill-wave"></i> Payment Mode:
+                        </p>
+                        <p style="color: #cbd5e0;">NEFT • RTGS • IMPS • Cheque</p>
+                    </div>
+                </div>
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>Accounting Entry:</strong><br>
+                    Vendor A/c                 Dr<br>
+                    To Bank A/c                Cr
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 8 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(46, 204, 113, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">8</div>
+                <h3 class="sector-title">GST COMPLIANCE</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #2ecc71; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-file-contract"></i> Includes:
+                        </p>
+                        <p style="color: #cbd5e0;">ITC eligibility • GSTR-2B reconciliation • GST posting</p>
+                    </div>
+                    <div>
+                        <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-exclamation-triangle"></i> Risk:
+                        </p>
+                        <p style="color: #cbd5e0;">Wrong GST → ITC loss / penalty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 9 -->
+        <div class="sector-card" style="margin-bottom: 1.5rem; background: rgba(243, 156, 18, 0.05);">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">9</div>
+                <h3 class="sector-title">VENDOR RECONCILIATION</h3>
+            </div>
+            <div class="tax-era-section vat-era active" style="background: transparent; border: none;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <p style="color: #f39c12; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-bullseye"></i> Meaning:
+                        </p>
+                        <p style="color: #cbd5e0;">Vendor ledger balance match karna</p>
+                    </div>
+                    <div>
+                        <p style="color: #f39c12; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-tasks"></i> Includes:
+                        </p>
+                        <p style="color: #cbd5e0;">Invoice vs payment • Debit/credit notes • Advance adjustment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sector Wise P2P Flow -->
+    <div class="summary-container">
+        <h3 class="summary-title">
+            <i class="fas fa-industry"></i> SECTOR WISE P2P FLOW
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 12px; border: 3px solid #3498db;">
+                <h4 style="color: #3498db; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-laptop-code"></i> IT / Services
+                </h4>
+                <div style="background: rgba(26, 26, 46, 0.6); padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace;">
+                    PR → PO → Invoice → Payment
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    <strong>Matching:</strong> Mostly 2-way match<br>
+                    <strong>Focus:</strong> Service deliverables & timelines
+                </p>
+            </div>
+            
+            <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 12px; border: 3px solid #2ecc71;">
+                <h4 style="color: #2ecc71; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-industry"></i> Manufacturing
+                </h4>
+                <div style="background: rgba(26, 26, 46, 0.6); padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace;">
+                    PR → PO → GRN → Invoice → Payment
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    <strong>Matching:</strong> Mostly 3-way match<br>
+                    <strong>Focus:</strong> Physical goods receipt & quality
+                </p>
+            </div>
+            
+            <div style="background: rgba(231, 76, 60, 0.1); padding: 1.5rem; border-radius: 12px; border: 3px solid #e74c3c;">
+                <h4 style="color: #e74c3c; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-flask"></i> Pharma / Chemical
+                </h4>
+                <div style="background: rgba(26, 26, 46, 0.6); padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace;">
+                    PR → PO → GRN → Quality → Invoice → Payment
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    <strong>Matching:</strong> 4-way match mandatory<br>
+                    <strong>Focus:</strong> Quality compliance & certifications
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Exceptions Section -->
+    <div class="sector-card" style="margin-top: 3rem;">
+        <div class="sector-header">
+            <div class="sector-number" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 class="sector-title">EXCEPTIONS IN P2P CYCLE</h3>
+        </div>
+        <div class="tax-era-section vat-era active">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px;">
+                    <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                        <i class="fas fa-file-invoice"></i> Invoice without PO
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Emergency purchases / Petty expenses</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px;">
+                    <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                        <i class="fas fa-tags"></i> Price variance
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">PO rate vs Invoice rate difference</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px;">
+                    <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                        <i class="fas fa-balance-scale"></i> Quantity mismatch
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Received vs invoiced quantity difference</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px;">
+                    <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                        <i class="fas fa-percentage"></i> GST mismatch
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Wrong GST rate or calculation</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px;">
+                    <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                        <i class="fas fa-copy"></i> Duplicate invoice
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Same invoice posted multiple times</p>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 8px;">
+                    <p style="color: #e74c3c; font-weight: 600; margin-bottom: 0.5rem;">
+                        <i class="fas fa-forward"></i> Advance payment cases
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Payment before goods/services receipt</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Key Controls Section -->
+    <div class="importance-container" style="margin-top: 3rem;">
+        <h3 class="importance-title">
+            <i class="fas fa-shield-alt"></i> KEY CONTROLS IN P2P
+        </h3>
+        <div class="importance-list" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="importance-item">
+                <i class="fas fa-user-check"></i>
+                <p class="importance-text">Maker-Checker concept</p>
+                <small>Dual verification</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-chart-line"></i>
+                <p class="importance-text">PO approval limits</p>
+                <small>Authority matrix</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-ban"></i>
+                <p class="importance-text">Invoice blocking</p>
+                <small>Error prevention</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-history"></i>
+                <p class="importance-text">Audit trail</p>
+                <small>Complete tracking</small>
+            </div>
+            <div class="importance-item">
+                <i class="fas fa-user-shield"></i>
+                <p class="importance-text">Segregation of duties</p>
+                <small>Risk reduction</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Interview Ready Summary -->
+    <div class="summary-container" style="margin-top: 3rem;">
+        <h3 class="summary-title">
+            <i class="fas fa-user-graduate"></i> INTERVIEW READY SUMMARY
+        </h3>
+        <div style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%); 
+                    padding: 2rem; border-radius: 12px; margin-top: 1.5rem; border: 3px solid var(--accent);">
+            <div style="text-align: center;">
+                <h4 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 1.5rem;">
+                    P2P CYCLE ENSURES:
+                </h4>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div style="text-align: center;">
+                    <div style="background: var(--gradient-accent); width: 60px; height: 60px; border-radius: 50%; 
+                                display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-rupee-sign" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <p style="color: var(--accent); font-weight: 600;">Cost control</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: var(--gradient-secondary); width: 60px; height: 60px; border-radius: 50%; 
+                                display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-file-contract" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <p style="color: var(--secondary); font-weight: 600;">Tax compliance</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: var(--gradient-gst); width: 60px; height: 60px; border-radius: 50%; 
+                                display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-book" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <p style="color: var(--gst-color); font-weight: 600;">Accurate accounting</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: var(--gradient-vat); width: 60px; height: 60px; border-radius: 50%; 
+                                display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-clock" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <p style="color: var(--vat-color); font-weight: 600;">Timely vendor payment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            <!-- Excel Tips Tab -->
+<div class="tab-content" id="excel-tab">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: var(--accent); font-size: 1.8rem; margin-bottom: 1rem;">
+            <i class="fas fa-file-excel"></i> EXCEL TIPS FOR ACCOUNTS & INVOICE PROCESSING
+        </h2>
+        <p style="color: #cbd5e0; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            Practical Excel formulas and tricks for faster and error-free accounting work
+        </p>
+    </div>
+    
+    <!-- Excel Header Banner -->
+    <div class="sector-card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(21, 87, 36, 0.1) 0%, rgba(33, 115, 70, 0.1) 100%); border: 3px solid #217346;">
+        <div class="sector-header">
+            <div class="sector-number" style="background: linear-gradient(135deg, #217346 0%, #165724 100%);">
+                <i class="fas fa-file-excel"></i>
+            </div>
+            <h3 class="sector-title" style="color: #217346;">EXCEL IS BACKBONE OF ACCOUNTS</h3>
+        </div>
+        <div style="text-align: center; padding: 1rem;">
+            <p style="color: #e2e8f0; font-size: 1.2rem; font-weight: 600;">
+                <i class="fas fa-bolt"></i> Fast Excel = Fast Invoice Processing
+            </p>
+        </div>
+    </div>
+    
+    <!-- Excel Tips Grid -->
+    <div class="sectors-container">
+        <!-- Tip 1 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: var(--gradient-accent);">1</div>
+                <h3 class="sector-title">REMOVE DUPLICATE INVOICES</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Duplicate invoice avoid karna</p>
+                
+                <h4 class="tax-era-title vat-era-title" style="margin-top: 1.5rem;">
+                    <i class="fas fa-steps"></i> Steps
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Select Invoice Number column</li>
+                    <li class="tax-point">Go to Data → Remove Duplicates</li>
+                    <li class="tax-point">Select only Invoice Number</li>
+                </ul>
+                
+                <div class="key-difference" style="margin-top: 1rem; background: linear-gradient(135deg, rgba(255, 126, 95, 0.1) 0%, rgba(255, 153, 102, 0.1) 100%);">
+                    <strong>Benefit:</strong> Payment duplication se bachao
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 2 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">2</div>
+                <h3 class="sector-title">VLOOKUP / XLOOKUP FOR VENDOR DATA</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Vendor name, GSTIN, bank details fetch karna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>XLOOKUP Example:</strong><br>
+                    =XLOOKUP(A2,Vendor!A:A,Vendor!B:B,"Not Found")
+                </div>
+                
+                <div class="key-difference" style="margin-top: 1rem; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);">
+                    <strong>Use:</strong> Invoice No → Vendor Name automatically
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 3 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">3</div>
+                <h3 class="sector-title">GST CALCULATION FORMULA</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <div class="accounting-entry" style="background: rgba(26, 26, 46, 0.6);">
+                    <strong>Base Amount in A2</strong><br><br>
+                    CGST: =A2*9%<br>
+                    SGST: =A2*9%<br>
+                    IGST: =A2*18%
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
+                    <div style="text-align: center; background: rgba(39, 174, 96, 0.1); padding: 0.8rem; border-radius: 6px; border: 2px solid rgba(39, 174, 96, 0.3);">
+                        <p style="color: #27ae60; font-weight: 600; font-size: 0.9rem;">CGST</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">9%</p>
+                    </div>
+                    <div style="text-align: center; background: rgba(39, 174, 96, 0.1); padding: 0.8rem; border-radius: 6px; border: 2px solid rgba(39, 174, 96, 0.3);">
+                        <p style="color: #27ae60; font-weight: 600; font-size: 0.9rem;">SGST</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">9%</p>
+                    </div>
+                    <div style="text-align: center; background: rgba(39, 174, 96, 0.1); padding: 0.8rem; border-radius: 6px; border: 2px solid rgba(39, 174, 96, 0.3);">
+                        <p style="color: #27ae60; font-weight: 600; font-size: 0.9rem;">IGST</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">18%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 4 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">4</div>
+                <h3 class="sector-title">3-WAY MATCH CHECK USING FORMULA</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">PO vs GRN vs Invoice quantity match check</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =IF(AND(B2=C2,C2=D2),"MATCH","MISMATCH")
+                </div>
+                
+                <div class="key-difference" style="margin-top: 1rem; background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);">
+                    <strong>Parameters:</strong><br>
+                    B2 = PO Qty<br>
+                    C2 = GRN Qty<br>
+                    D2 = Invoice Qty
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 5 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">5</div>
+                <h3 class="sector-title">CONDITIONAL FORMATTING – MISMATCH</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Mismatch invoices highlight karna</p>
+                
+                <h4 class="tax-era-title vat-era-title" style="margin-top: 1.5rem;">
+                    <i class="fas fa-steps"></i> Steps
+                </h4>
+                <ul class="tax-points">
+                    <li class="tax-point">Select column</li>
+                    <li class="tax-point">Conditional Formatting</li>
+                    <li class="tax-point">Text contains → "MISMATCH"</li>
+                </ul>
+                
+                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, rgba(155, 89, 182, 0.1) 0%, rgba(142, 68, 173, 0.1) 100%); border-radius: 6px;">
+                    <p style="color: #9b59b6; font-weight: 600;">
+                        <i class="fas fa-palette"></i> Format:
+                    </p>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">Red background with white text</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 6 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">6</div>
+                <h3 class="sector-title">PAYMENT DUE DATE CALCULATION</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Due date nikalna as per payment terms</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    <strong>Invoice Date in A2</strong><br>
+                    <strong>Payment terms 30 days</strong><br><br>
+                    =A2+30
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;">
+                    <div style="background: rgba(243, 156, 18, 0.1); padding: 0.8rem; border-radius: 6px;">
+                        <p style="color: #f39c12; font-size: 0.85rem; font-weight: 600;">30 Days</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">=A2+30</p>
+                    </div>
+                    <div style="background: rgba(243, 156, 18, 0.1); padding: 0.8rem; border-radius: 6px;">
+                        <p style="color: #f39c12; font-size: 0.85rem; font-weight: 600;">45 Days</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">=A2+45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Second Row of Tips -->
+    <div class="sectors-container" style="margin-top: 2rem;">
+        <!-- Tip 7 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);">7</div>
+                <h3 class="sector-title">WORKING DAYS CALCULATION</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Only working days count karna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =NETWORKDAYS(A2,B2)
+                </div>
+                
+                <div class="key-difference" style="margin-top: 1rem; background: linear-gradient(135deg, rgba(26, 188, 156, 0.1) 0%, rgba(22, 160, 133, 0.1) 100%);">
+                    <strong>Parameters:</strong><br>
+                    A2 = Start Date<br>
+                    B2 = End Date
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 8 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);">8</div>
+                <h3 class="sector-title">GST RATE VALIDATION</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Wrong GST rate identify karna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =IF(A2=18%,"OK","CHECK")
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 1rem;">
+                    <div style="background: rgba(46, 204, 113, 0.1); padding: 0.5rem; border-radius: 4px; text-align: center;">
+                        <p style="color: #2ecc71; font-size: 0.75rem;">0%</p>
+                    </div>
+                    <div style="background: rgba(46, 204, 113, 0.1); padding: 0.5rem; border-radius: 4px; text-align: center;">
+                        <p style="color: #2ecc71; font-size: 0.75rem;">5%</p>
+                    </div>
+                    <div style="background: rgba(46, 204, 113, 0.1); padding: 0.5rem; border-radius: 4px; text-align: center;">
+                        <p style="color: #2ecc71; font-size: 0.75rem;">12%</p>
+                    </div>
+                    <div style="background: rgba(46, 204, 113, 0.1); padding: 0.5rem; border-radius: 4px; text-align: center;">
+                        <p style="color: #2ecc71; font-size: 0.75rem;">18%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 9 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">9</div>
+                <h3 class="sector-title">AGEING REPORT (INVOICE AGE)</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Pending invoices ka age nikalna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =TODAY()-A2
+                </div>
+                
+                <div class="key-difference" style="margin-top: 1rem; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);">
+                    <strong>Result:</strong><br>
+                    0-30 days = Current<br>
+                    31-60 days = 1 Month<br>
+                    61-90 days = 2 Months<br>
+                    90+ days = Overdue
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 10 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">10</div>
+                <h3 class="sector-title">FILTER INTERCOMPANY VENDORS</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">IC vendors identify karna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =IF(ISNUMBER(SEARCH("IC",A2)),"INTERCOMPANY","NORMAL")
+                </div>
+                
+                <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                    <div style="background: rgba(155, 89, 182, 0.1); padding: 0.8rem; border-radius: 6px; flex: 1;">
+                        <p style="color: #9b59b6; font-size: 0.85rem; font-weight: 600;">INTERCOMPANY</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">IC-001, IC-002, etc.</p>
+                    </div>
+                    <div style="background: rgba(46, 204, 113, 0.1); padding: 0.8rem; border-radius: 6px; flex: 1;">
+                        <p style="color: #2ecc71; font-size: 0.85rem; font-weight: 600;">NORMAL</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">Regular vendors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 11 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">11</div>
+                <h3 class="sector-title">ROUND OFF TAX DIFFERENCE</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Minor GST rounding difference avoid karna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =ROUND(A2,2)
+                </div>
+                
+                <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                    <div style="background: rgba(231, 76, 60, 0.1); padding: 0.8rem; border-radius: 6px; flex: 1;">
+                        <p style="color: #e74c3c; font-size: 0.85rem; font-weight: 600;">Before</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">1000 * 18% = 180.004</p>
+                    </div>
+                    <div style="background: rgba(46, 204, 113, 0.1); padding: 0.8rem; border-radius: 6px; flex: 1;">
+                        <p style="color: #2ecc71; font-size: 0.85rem; font-weight: 600;">After</p>
+                        <p style="color: #cbd5e0; font-size: 0.8rem;">1000 * 18% = 180.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tip 12 -->
+        <div class="sector-card">
+            <div class="sector-header">
+                <div class="sector-number" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">12</div>
+                <h3 class="sector-title">CONCATENATE FOR UNIQUE KEY</h3>
+            </div>
+            <div class="tax-era-section vat-era active">
+                <h4 class="tax-era-title vat-era-title">
+                    <i class="fas fa-bullseye"></i> Purpose
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Duplicate invoice detect karna</p>
+                
+                <div class="accounting-entry" style="margin-top: 1rem;">
+                    =A2&"-"&B2&"-"&C2
+                </div>
+                
+                <div class="key-difference" style="margin-top: 1rem; background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(230, 126, 34, 0.1) 100%);">
+                    <strong>Combination:</strong><br>
+                    Invoice No + Vendor + Amount
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Advanced Tips Section -->
+    <div class="summary-container" style="margin-top: 3rem;">
+        <h3 class="summary-title">
+            <i class="fas fa-chart-line"></i> ADVANCED EXCEL TECHNIQUES
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+            <!-- Tip 13 -->
+            <div style="background: rgba(155, 89, 182, 0.1); padding: 1.5rem; border-radius: 12px; border: 3px solid #9b59b6;">
+                <h4 style="color: #9b59b6; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #9b59b6; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">13</span>
+                    PIVOT TABLE – MONTHLY EXPENSE
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">
+                    Monthly expense summary analysis
+                </p>
+                <div style="background: rgba(26, 26, 46, 0.6); padding: 1rem; border-radius: 8px;">
+                    <strong>Steps:</strong><br>
+                    1. Select data<br>
+                    2. Insert → Pivot Table<br>
+                    3. Rows: Month<br>
+                    4. Values: Amount
                 </div>
             </div>
             
-            <!-- Excel Tips Tab -->
-            <div class="tab-content" id="excel-tab">
-                <div class="content-text">
-                    Excel Tips & Tricks for Accountants:
-                    
-                    • Use VLOOKUP for quick data matching
-                    • PivotTables for summarizing large datasets
-                    • Conditional Formatting to highlight variances
-                    • Data Validation for error-free data entry
-                    • Power Query for cleaning and transforming data
+            <!-- Tip 14 -->
+            <div style="background: rgba(52, 152, 219, 0.1); padding: 1.5rem; border-radius: 12px; border: 3px solid #3498db;">
+                <h4 style="color: #3498db; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #3498db; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">14</span>
+                    IFERROR TO AVOID FORMULA ERROR
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">
+                    #N/A aur other errors avoid karna
+                </p>
+                <div class="accounting-entry">
+                    =IFERROR(XLOOKUP(A2,A:A,B:B),"NA")
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    <strong>Benefit:</strong> Clean reports with no errors
+                </p>
+            </div>
+            
+            <!-- Tip 15 -->
+            <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 12px; border: 3px solid #2ecc71;">
+                <h4 style="color: #2ecc71; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #2ecc71; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">15</span>
+                    TEXT TO NUMBER CONVERSION
+                </h4>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">
+                    Numbers stored as text fix karna
+                </p>
+                <div class="accounting-entry">
+                    =VALUE(A2)
+                </div>
+                <p style="color: #cbd5e0; margin-top: 1rem; font-size: 0.9rem;">
+                    <strong>Use:</strong> When import from other systems
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Excel Keyboard Shortcuts -->
+    <div class="importance-container" style="margin-top: 3rem;">
+        <h3 class="importance-title">
+            <i class="fas fa-keyboard"></i> EXCEL KEYBOARD SHORTCUTS FOR ACCOUNTS
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                <p style="color: var(--accent); font-weight: 600;">
+                    <i class="fas fa-search"></i> Ctrl + F
+                </p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Find specific invoice</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                <p style="color: var(--accent); font-weight: 600;">
+                    <i class="fas fa-filter"></i> Ctrl + Shift + L
+                </p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Apply/Remove filters</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                <p style="color: var(--accent); font-weight: 600;">
+                    <i class="fas fa-calculator"></i> Alt + =
+                </p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">AutoSum selected cells</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                <p style="color: var(--accent); font-weight: 600;">
+                    <i class="fas fa-dollar-sign"></i> Ctrl + Shift + $
+                </p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Currency format</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                <p style="color: var(--accent); font-weight: 600;">
+                    <i class="fas fa-percentage"></i> Ctrl + Shift + %
+                </p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">Percentage format</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                <p style="color: var(--accent); font-weight: 600;">
+                    <i class="fas fa-columns"></i> Alt + H + O + I
+                </p>
+                <p style="color: #cbd5e0; font-size: 0.9rem;">AutoFit column width</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Best Practices -->
+    <div class="sector-card" style="margin-top: 3rem;">
+        <div class="sector-header">
+            <div class="sector-number" style="background: linear-gradient(135deg, #217346 0%, #165724 100%);">
+                <i class="fas fa-star"></i>
+            </div>
+            <h3 class="sector-title" style="color: #217346;">EXCEL BEST PRACTICES FOR ACCOUNTS</h3>
+        </div>
+        <div class="tax-era-section vat-era active">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="background: rgba(33, 115, 70, 0.1); padding: 1.5rem; border-radius: 8px;">
+                    <h4 style="color: #217346; margin-bottom: 1rem;">
+                        <i class="fas fa-save"></i> Regular Backup
+                    </h4>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">
+                        Always keep backup before major changes. Use version control.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(33, 115, 70, 0.1); padding: 1.5rem; border-radius: 8px;">
+                    <h4 style="color: #217346; margin-bottom: 1rem;">
+                        <i class="fas fa-check-double"></i> Data Validation
+                    </h4>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">
+                        Use Data Validation for dropdowns to avoid manual entry errors.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(33, 115, 70, 0.1); padding: 1.5rem; border-radius: 8px;">
+                    <h4 style="color: #217346; margin-bottom: 1rem;">
+                        <i class="fas fa-lock"></i> Protect Formulas
+                    </h4>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">
+                        Protect formula cells to prevent accidental changes.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(33, 115, 70, 0.1); padding: 1.5rem; border-radius: 8px;">
+                    <h4 style="color: #217346; margin-bottom: 1rem;">
+                        <i class="fas fa-table"></i> Use Tables
+                    </h4>
+                    <p style="color: #cbd5e0; font-size: 0.9rem;">
+                        Convert data ranges to Tables (Ctrl+T) for dynamic ranges.
+                    </p>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
         </section>
     </main>
     
